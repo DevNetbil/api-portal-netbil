@@ -1,0 +1,210 @@
+2022-03-25T11:10:39: C:\Projetos GitHub\api-portal-netbil\index.ts:1
+2022-03-25T11:10:39: import { PrismaClient, Prisma } from "@prisma/client";
+2022-03-25T11:10:39: ^^^^^^
+2022-03-25T11:10:39: 
+2022-03-25T11:10:39: SyntaxError: Cannot use import statement outside a module
+2022-03-25T11:10:39:     at wrapSafe (internal/modules/cjs/loader.js:988:16)
+2022-03-25T11:10:39:     at Module._compile (internal/modules/cjs/loader.js:1036:27)
+2022-03-25T11:10:39:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)
+2022-03-25T11:10:39:     at Module.load (internal/modules/cjs/loader.js:937:32)
+2022-03-25T11:10:39:     at Function.Module._load (internal/modules/cjs/loader.js:778:12)
+2022-03-25T11:10:39:     at Module.require (internal/modules/cjs/loader.js:961:19)
+2022-03-25T11:10:39:     at Module.Hook._require.Module.require (C:\Users\Netbil\AppData\Roaming\npm\node_modules\pm2\node_modules\require-in-the-middle\index.js:80:39)
+2022-03-25T11:10:39:     at require (internal/modules/cjs/helpers.js:92:18)
+2022-03-25T11:10:39:     at Object.<anonymous> (C:\Projetos GitHub\api-portal-netbil\server.js:1:15)
+2022-03-25T11:10:39:     at Module._compile (internal/modules/cjs/loader.js:1072:14)
+2022-03-25T11:10:39: C:\Projetos GitHub\api-portal-netbil\index.ts:1
+2022-03-25T11:10:39: import { PrismaClient, Prisma } from "@prisma/client";
+2022-03-25T11:10:39: ^^^^^^
+2022-03-25T11:10:39: 
+2022-03-25T11:10:39: SyntaxError: Cannot use import statement outside a module
+2022-03-25T11:10:39:     at wrapSafe (internal/modules/cjs/loader.js:988:16)
+2022-03-25T11:10:39:     at Module._compile (internal/modules/cjs/loader.js:1036:27)
+2022-03-25T11:10:39:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)
+2022-03-25T11:10:39:     at Module.load (internal/modules/cjs/loader.js:937:32)
+2022-03-25T11:10:39:     at Function.Module._load (internal/modules/cjs/loader.js:778:12)
+2022-03-25T11:10:39:     at Module.require (internal/modules/cjs/loader.js:961:19)
+2022-03-25T11:10:39:     at Module.Hook._require.Module.require (C:\Users\Netbil\AppData\Roaming\npm\node_modules\pm2\node_modules\require-in-the-middle\index.js:80:39)
+2022-03-25T11:10:39:     at require (internal/modules/cjs/helpers.js:92:18)
+2022-03-25T11:10:39:     at Object.<anonymous> (C:\Projetos GitHub\api-portal-netbil\server.js:1:15)
+2022-03-25T11:10:39:     at Module._compile (internal/modules/cjs/loader.js:1072:14)
+2022-03-25T11:10:40: C:\Projetos GitHub\api-portal-netbil\index.ts:1
+2022-03-25T11:10:40: import { PrismaClient, Prisma } from "@prisma/client";
+2022-03-25T11:10:40: ^^^^^^
+2022-03-25T11:10:40: 
+2022-03-25T11:10:40: SyntaxError: Cannot use import statement outside a module
+2022-03-25T11:10:40:     at wrapSafe (internal/modules/cjs/loader.js:988:16)
+2022-03-25T11:10:40:     at Module._compile (internal/modules/cjs/loader.js:1036:27)
+2022-03-25T11:10:40:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)
+2022-03-25T11:10:40:     at Module.load (internal/modules/cjs/loader.js:937:32)
+2022-03-25T11:10:40:     at Function.Module._load (internal/modules/cjs/loader.js:778:12)
+2022-03-25T11:10:40:     at Module.require (internal/modules/cjs/loader.js:961:19)
+2022-03-25T11:10:40:     at Module.Hook._require.Module.require (C:\Users\Netbil\AppData\Roaming\npm\node_modules\pm2\node_modules\require-in-the-middle\index.js:80:39)
+2022-03-25T11:10:40:     at require (internal/modules/cjs/helpers.js:92:18)
+2022-03-25T11:10:40:     at Object.<anonymous> (C:\Projetos GitHub\api-portal-netbil\server.js:1:15)
+2022-03-25T11:10:40:     at Module._compile (internal/modules/cjs/loader.js:1072:14)
+2022-03-25T11:10:40: C:\Projetos GitHub\api-portal-netbil\index.ts:1
+2022-03-25T11:10:40: import { PrismaClient, Prisma } from "@prisma/client";
+2022-03-25T11:10:40: ^^^^^^
+2022-03-25T11:10:40: 
+2022-03-25T11:10:40: SyntaxError: Cannot use import statement outside a module
+2022-03-25T11:10:40:     at wrapSafe (internal/modules/cjs/loader.js:988:16)
+2022-03-25T11:10:40:     at Module._compile (internal/modules/cjs/loader.js:1036:27)
+2022-03-25T11:10:40:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)
+2022-03-25T11:10:40:     at Module.load (internal/modules/cjs/loader.js:937:32)
+2022-03-25T11:10:40:     at Function.Module._load (internal/modules/cjs/loader.js:778:12)
+2022-03-25T11:10:40:     at Module.require (internal/modules/cjs/loader.js:961:19)
+2022-03-25T11:10:40:     at Module.Hook._require.Module.require (C:\Users\Netbil\AppData\Roaming\npm\node_modules\pm2\node_modules\require-in-the-middle\index.js:80:39)
+2022-03-25T11:10:40:     at require (internal/modules/cjs/helpers.js:92:18)
+2022-03-25T11:10:40:     at Object.<anonymous> (C:\Projetos GitHub\api-portal-netbil\server.js:1:15)
+2022-03-25T11:10:40:     at Module._compile (internal/modules/cjs/loader.js:1072:14)
+2022-03-25T11:10:41: C:\Projetos GitHub\api-portal-netbil\index.ts:1
+2022-03-25T11:10:41: import { PrismaClient, Prisma } from "@prisma/client";
+2022-03-25T11:10:41: ^^^^^^
+2022-03-25T11:10:41: 
+2022-03-25T11:10:41: SyntaxError: Cannot use import statement outside a module
+2022-03-25T11:10:41:     at wrapSafe (internal/modules/cjs/loader.js:988:16)
+2022-03-25T11:10:41:     at Module._compile (internal/modules/cjs/loader.js:1036:27)
+2022-03-25T11:10:41:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)
+2022-03-25T11:10:41:     at Module.load (internal/modules/cjs/loader.js:937:32)
+2022-03-25T11:10:41:     at Function.Module._load (internal/modules/cjs/loader.js:778:12)
+2022-03-25T11:10:41:     at Module.require (internal/modules/cjs/loader.js:961:19)
+2022-03-25T11:10:41:     at Module.Hook._require.Module.require (C:\Users\Netbil\AppData\Roaming\npm\node_modules\pm2\node_modules\require-in-the-middle\index.js:80:39)
+2022-03-25T11:10:41:     at require (internal/modules/cjs/helpers.js:92:18)
+2022-03-25T11:10:41:     at Object.<anonymous> (C:\Projetos GitHub\api-portal-netbil\server.js:1:15)
+2022-03-25T11:10:41:     at Module._compile (internal/modules/cjs/loader.js:1072:14)
+2022-03-25T11:10:42: C:\Projetos GitHub\api-portal-netbil\index.ts:1
+2022-03-25T11:10:42: import { PrismaClient, Prisma } from "@prisma/client";
+2022-03-25T11:10:42: ^^^^^^
+2022-03-25T11:10:42: 
+2022-03-25T11:10:42: SyntaxError: Cannot use import statement outside a module
+2022-03-25T11:10:42:     at wrapSafe (internal/modules/cjs/loader.js:988:16)
+2022-03-25T11:10:42:     at Module._compile (internal/modules/cjs/loader.js:1036:27)
+2022-03-25T11:10:42:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)
+2022-03-25T11:10:42:     at Module.load (internal/modules/cjs/loader.js:937:32)
+2022-03-25T11:10:42:     at Function.Module._load (internal/modules/cjs/loader.js:778:12)
+2022-03-25T11:10:42:     at Module.require (internal/modules/cjs/loader.js:961:19)
+2022-03-25T11:10:42:     at Module.Hook._require.Module.require (C:\Users\Netbil\AppData\Roaming\npm\node_modules\pm2\node_modules\require-in-the-middle\index.js:80:39)
+2022-03-25T11:10:42:     at require (internal/modules/cjs/helpers.js:92:18)
+2022-03-25T11:10:42:     at Object.<anonymous> (C:\Projetos GitHub\api-portal-netbil\server.js:1:15)
+2022-03-25T11:10:42:     at Module._compile (internal/modules/cjs/loader.js:1072:14)
+2022-03-25T11:10:43: C:\Projetos GitHub\api-portal-netbil\index.ts:1
+2022-03-25T11:10:43: import { PrismaClient, Prisma } from "@prisma/client";
+2022-03-25T11:10:43: ^^^^^^
+2022-03-25T11:10:43: 
+2022-03-25T11:10:43: SyntaxError: Cannot use import statement outside a module
+2022-03-25T11:10:43:     at wrapSafe (internal/modules/cjs/loader.js:988:16)
+2022-03-25T11:10:43:     at Module._compile (internal/modules/cjs/loader.js:1036:27)
+2022-03-25T11:10:43:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)
+2022-03-25T11:10:43:     at Module.load (internal/modules/cjs/loader.js:937:32)
+2022-03-25T11:10:43:     at Function.Module._load (internal/modules/cjs/loader.js:778:12)
+2022-03-25T11:10:43:     at Module.require (internal/modules/cjs/loader.js:961:19)
+2022-03-25T11:10:43:     at Module.Hook._require.Module.require (C:\Users\Netbil\AppData\Roaming\npm\node_modules\pm2\node_modules\require-in-the-middle\index.js:80:39)
+2022-03-25T11:10:43:     at require (internal/modules/cjs/helpers.js:92:18)
+2022-03-25T11:10:43:     at Object.<anonymous> (C:\Projetos GitHub\api-portal-netbil\server.js:1:15)
+2022-03-25T11:10:43:     at Module._compile (internal/modules/cjs/loader.js:1072:14)
+2022-03-25T11:10:44: C:\Projetos GitHub\api-portal-netbil\index.ts:1
+2022-03-25T11:10:44: import { PrismaClient, Prisma } from "@prisma/client";
+2022-03-25T11:10:44: ^^^^^^
+2022-03-25T11:10:44: 
+2022-03-25T11:10:44: SyntaxError: Cannot use import statement outside a module
+2022-03-25T11:10:44:     at wrapSafe (internal/modules/cjs/loader.js:988:16)
+2022-03-25T11:10:44:     at Module._compile (internal/modules/cjs/loader.js:1036:27)
+2022-03-25T11:10:44:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)
+2022-03-25T11:10:44:     at Module.load (internal/modules/cjs/loader.js:937:32)
+2022-03-25T11:10:44:     at Function.Module._load (internal/modules/cjs/loader.js:778:12)
+2022-03-25T11:10:44:     at Module.require (internal/modules/cjs/loader.js:961:19)
+2022-03-25T11:10:44:     at Module.Hook._require.Module.require (C:\Users\Netbil\AppData\Roaming\npm\node_modules\pm2\node_modules\require-in-the-middle\index.js:80:39)
+2022-03-25T11:10:44:     at require (internal/modules/cjs/helpers.js:92:18)
+2022-03-25T11:10:44:     at Object.<anonymous> (C:\Projetos GitHub\api-portal-netbil\server.js:1:15)
+2022-03-25T11:10:44:     at Module._compile (internal/modules/cjs/loader.js:1072:14)
+2022-03-25T11:10:46: C:\Projetos GitHub\api-portal-netbil\index.ts:1
+2022-03-25T11:10:46: import { PrismaClient, Prisma } from "@prisma/client";
+2022-03-25T11:10:46: ^^^^^^
+2022-03-25T11:10:46: 
+2022-03-25T11:10:46: SyntaxError: Cannot use import statement outside a module
+2022-03-25T11:10:46:     at wrapSafe (internal/modules/cjs/loader.js:988:16)
+2022-03-25T11:10:46:     at Module._compile (internal/modules/cjs/loader.js:1036:27)
+2022-03-25T11:10:46:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)
+2022-03-25T11:10:46:     at Module.load (internal/modules/cjs/loader.js:937:32)
+2022-03-25T11:10:46:     at Function.Module._load (internal/modules/cjs/loader.js:778:12)
+2022-03-25T11:10:46:     at Module.require (internal/modules/cjs/loader.js:961:19)
+2022-03-25T11:10:46:     at Module.Hook._require.Module.require (C:\Users\Netbil\AppData\Roaming\npm\node_modules\pm2\node_modules\require-in-the-middle\index.js:80:39)
+2022-03-25T11:10:46:     at require (internal/modules/cjs/helpers.js:92:18)
+2022-03-25T11:10:46:     at Object.<anonymous> (C:\Projetos GitHub\api-portal-netbil\server.js:1:15)
+2022-03-25T11:10:46:     at Module._compile (internal/modules/cjs/loader.js:1072:14)
+2022-03-25T11:10:49: C:\Projetos GitHub\api-portal-netbil\index.ts:1
+2022-03-25T11:10:49: import { PrismaClient, Prisma } from "@prisma/client";
+2022-03-25T11:10:49: ^^^^^^
+2022-03-25T11:10:49: 
+2022-03-25T11:10:49: SyntaxError: Cannot use import statement outside a module
+2022-03-25T11:10:49:     at wrapSafe (internal/modules/cjs/loader.js:988:16)
+2022-03-25T11:10:49:     at Module._compile (internal/modules/cjs/loader.js:1036:27)
+2022-03-25T11:10:49:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)
+2022-03-25T11:10:49:     at Module.load (internal/modules/cjs/loader.js:937:32)
+2022-03-25T11:10:49:     at Function.Module._load (internal/modules/cjs/loader.js:778:12)
+2022-03-25T11:10:49:     at Module.require (internal/modules/cjs/loader.js:961:19)
+2022-03-25T11:10:49:     at Module.Hook._require.Module.require (C:\Users\Netbil\AppData\Roaming\npm\node_modules\pm2\node_modules\require-in-the-middle\index.js:80:39)
+2022-03-25T11:10:49:     at require (internal/modules/cjs/helpers.js:92:18)
+2022-03-25T11:10:49:     at Object.<anonymous> (C:\Projetos GitHub\api-portal-netbil\server.js:1:15)
+2022-03-25T11:10:49:     at Module._compile (internal/modules/cjs/loader.js:1072:14)
+2022-03-25T11:10:53: C:\Projetos GitHub\api-portal-netbil\index.ts:1
+2022-03-25T11:10:53: import { PrismaClient, Prisma } from "@prisma/client";
+2022-03-25T11:10:53: ^^^^^^
+2022-03-25T11:10:53: 
+2022-03-25T11:10:53: SyntaxError: Cannot use import statement outside a module
+2022-03-25T11:10:53:     at wrapSafe (internal/modules/cjs/loader.js:988:16)
+2022-03-25T11:10:53:     at Module._compile (internal/modules/cjs/loader.js:1036:27)
+2022-03-25T11:10:53:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)
+2022-03-25T11:10:53:     at Module.load (internal/modules/cjs/loader.js:937:32)
+2022-03-25T11:10:53:     at Function.Module._load (internal/modules/cjs/loader.js:778:12)
+2022-03-25T11:10:53:     at Module.require (internal/modules/cjs/loader.js:961:19)
+2022-03-25T11:10:53:     at Module.Hook._require.Module.require (C:\Users\Netbil\AppData\Roaming\npm\node_modules\pm2\node_modules\require-in-the-middle\index.js:80:39)
+2022-03-25T11:10:53:     at require (internal/modules/cjs/helpers.js:92:18)
+2022-03-25T11:10:53:     at Object.<anonymous> (C:\Projetos GitHub\api-portal-netbil\server.js:1:15)
+2022-03-25T11:10:53:     at Module._compile (internal/modules/cjs/loader.js:1072:14)
+2022-03-25T11:10:59: C:\Projetos GitHub\api-portal-netbil\index.ts:1
+2022-03-25T11:10:59: import { PrismaClient, Prisma } from "@prisma/client";
+2022-03-25T11:10:59: ^^^^^^
+2022-03-25T11:10:59: 
+2022-03-25T11:10:59: SyntaxError: Cannot use import statement outside a module
+2022-03-25T11:10:59:     at wrapSafe (internal/modules/cjs/loader.js:988:16)
+2022-03-25T11:10:59:     at Module._compile (internal/modules/cjs/loader.js:1036:27)
+2022-03-25T11:10:59:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)
+2022-03-25T11:10:59:     at Module.load (internal/modules/cjs/loader.js:937:32)
+2022-03-25T11:10:59:     at Function.Module._load (internal/modules/cjs/loader.js:778:12)
+2022-03-25T11:10:59:     at Module.require (internal/modules/cjs/loader.js:961:19)
+2022-03-25T11:10:59:     at Module.Hook._require.Module.require (C:\Users\Netbil\AppData\Roaming\npm\node_modules\pm2\node_modules\require-in-the-middle\index.js:80:39)
+2022-03-25T11:10:59:     at require (internal/modules/cjs/helpers.js:92:18)
+2022-03-25T11:10:59:     at Object.<anonymous> (C:\Projetos GitHub\api-portal-netbil\server.js:1:15)
+2022-03-25T11:10:59:     at Module._compile (internal/modules/cjs/loader.js:1072:14)
+2022-03-25T11:11:08: C:\Projetos GitHub\api-portal-netbil\index.ts:1
+2022-03-25T11:11:08: import { PrismaClient, Prisma } from "@prisma/client";
+2022-03-25T11:11:08: ^^^^^^
+2022-03-25T11:11:08: 
+2022-03-25T11:11:08: SyntaxError: Cannot use import statement outside a module
+2022-03-25T11:11:08:     at wrapSafe (internal/modules/cjs/loader.js:988:16)
+2022-03-25T11:11:08:     at Module._compile (internal/modules/cjs/loader.js:1036:27)
+2022-03-25T11:11:08:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)
+2022-03-25T11:11:08:     at Module.load (internal/modules/cjs/loader.js:937:32)
+2022-03-25T11:11:08:     at Function.Module._load (internal/modules/cjs/loader.js:778:12)
+2022-03-25T11:11:08:     at Module.require (internal/modules/cjs/loader.js:961:19)
+2022-03-25T11:11:08:     at Module.Hook._require.Module.require (C:\Users\Netbil\AppData\Roaming\npm\node_modules\pm2\node_modules\require-in-the-middle\index.js:80:39)
+2022-03-25T11:11:08:     at require (internal/modules/cjs/helpers.js:92:18)
+2022-03-25T11:11:08:     at Object.<anonymous> (C:\Projetos GitHub\api-portal-netbil\server.js:1:15)
+2022-03-25T11:11:08:     at Module._compile (internal/modules/cjs/loader.js:1072:14)
+2022-03-25T11:11:22: C:\Projetos GitHub\api-portal-netbil\index.ts:1
+2022-03-25T11:11:22: import { PrismaClient, Prisma } from "@prisma/client";
+2022-03-25T11:11:22: ^^^^^^
+2022-03-25T11:11:22: 
+2022-03-25T11:11:22: SyntaxError: Cannot use import statement outside a module
+2022-03-25T11:11:22:     at wrapSafe (internal/modules/cjs/loader.js:988:16)
+2022-03-25T11:11:22:     at Module._compile (internal/modules/cjs/loader.js:1036:27)
+2022-03-25T11:11:22:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)
+2022-03-25T11:11:22:     at Module.load (internal/modules/cjs/loader.js:937:32)
+2022-03-25T11:11:22:     at Function.Module._load (internal/modules/cjs/loader.js:778:12)
+2022-03-25T11:11:22:     at Module.require (internal/modules/cjs/loader.js:961:19)
+2022-03-25T11:11:22:     at Module.Hook._require.Module.require (C:\Users\Netbil\AppData\Roaming\npm\node_modules\pm2\node_modules\require-in-the-middle\index.js:80:39)
+2022-03-25T11:11:22:     at require (internal/modules/cjs/helpers.js:92:18)
+2022-03-25T11:11:22:     at Object.<anonymous> (C:\Projetos GitHub\api-portal-netbil\server.js:1:15)
+2022-03-25T11:11:22:     at Module._compile (internal/modules/cjs/loader.js:1072:14)
