@@ -13,7 +13,7 @@
     "start:dev3": "nodemon src/index.ts localhost 3333",
     "start:dev": "pm2 start ./config/pm2/pm2-dev-process.config.js --watch",
     "start:prod": "pm2 start ./config/pm2/pm2-prod-process.config.js",
-    "go:dev": "yarn psm-gen-dev&&ts-node src/server.js"
+    "go:dev": "yarn psm-pull-db-dev&&yarn psm-gen-dev&&yarn nodemon src/server.ts"
   },
   "dependencies": {
     "@types/cors": "^2.8.12",

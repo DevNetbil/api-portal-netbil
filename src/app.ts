@@ -1,32 +1,22 @@
 import { PrismaClient } from "@prisma/client";
 import express from "express";
+import logged from "./functions/logged";
+import erAgendas from "./routes/agenda";
+import erError from "./routes/error";
+import rtRegistro from "./routes/registro";
 
 export const prisma = new PrismaClient();
 export const app = express();
 
 app.use(express.json());
+app.use("/agendas", erAgendas);
+app.use("/registro", rtRegistro);
+app.use("/error", erError);
 
-app.get(`/user`, async (_req, res) => {
-  //   const result = await prisma.user.findMany();
-  console.log("ex");
-  res.json(["ex"]);
+app.get(`/:what`, async (_req, res) => {
+  const resultLogged = await logged(_req.headers);
+  console.log("LOGADO ->", resultLogged);
+  res.json([resultLogged]);
 });
 
-app.post(`/user`, async (req, res) => {
-  console.log("ex");
-  res.json(["ex"]);
-  //   const { name, email } = req.body;
-  //   try {
-  //     const result = await prisma.user.create({
-  //       data: {
-  //         name,
-  //         email,
-  //       },
-  //     });
-  //     res.json(result);
-  //   } catch (e) {
-  //     res.status(409).json({
-  //       error: "User already exists!",
-  //     });
-  //   }
-});
+export default app;
