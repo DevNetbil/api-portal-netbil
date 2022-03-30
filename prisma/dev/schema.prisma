@@ -8,7 +8,7 @@ datasource db {
 }
 
 model importaalunos {
-  ID           Int?     @id @default(autoincrement())
+  ID           Int     @id @default(autoincrement())
   Arquivo      String   @db.VarChar(45)
   DataCadastro DateTime @default(now()) @db.Timestamp(0)
   Importada    Boolean  @default(false)
@@ -20,7 +20,7 @@ model importaalunos {
 }
 
 model pegaentradas {
-  ID        Int?     @id @default(autoincrement())
+  ID        Int     @id @default(autoincrement())
   texto     String?  @db.Text
   Textoform String?  @db.Text
   IP        String?  @db.VarChar(20)
@@ -30,7 +30,7 @@ model pegaentradas {
 }
 
 model areadacrianca {
-  ID            Int?     @id @default(autoincrement())
+  ID            Int     @id @default(autoincrement())
   Titulo        String   @db.VarChar(100)
   IDCategoria   Int?  
   Imagem        String?  @db.VarChar(100)
@@ -47,7 +47,7 @@ model areadacrianca {
 }
 
 model areadacrianca_cadastros {
-  ID    Int?     @id @default(autoincrement())
+  ID    Int     @id @default(autoincrement())
   Nome  String?  @db.VarChar(100)
   Email String   @db.VarChar(100)
   Data  DateTime @default(now()) @db.Timestamp(0)
@@ -55,7 +55,7 @@ model areadacrianca_cadastros {
 }
 
 model areadacriancacategorias {
-  ID          Int?     @id @default(autoincrement())
+  ID          Int     @id @default(autoincrement())
   Categoria   String   @db.VarChar(100)
   Ordem       Int?
   Ativo       Boolean? @default(true)
@@ -63,7 +63,7 @@ model areadacriancacategorias {
 }
 
 model importa_responsaveis {
-  ID        Int?    @id @default(autoincrement())
+  ID        Int    @id @default(autoincrement())
   Matricula String? @db.VarChar(45)
   Nome      String? @db.VarChar(100)
   CPF       String? @db.VarChar(45)
@@ -74,7 +74,7 @@ model importa_responsaveis {
 }
 
 model importardados {
-  ID               Int?   @id @default(autoincrement())
+  ID               Int   @id @default(autoincrement())
   NomeEscola       String @db.VarChar(100)
   CidadeEscola     String @db.VarChar(100)
   EnderecoEscola   String @db.VarChar(100)
@@ -99,7 +99,7 @@ model importardados {
 }
 
 model importardadosalunoresp {
-  ID                   Int?     @id @default(autoincrement())
+  ID                   Int     @id @default(autoincrement())
   IDNomeEscola         Int?  
   RAAluno              String   @db.VarChar(30)
   NumeroChamada        String?  @db.VarChar(100)
@@ -130,7 +130,7 @@ model importardadosalunoresp {
 }
 
 model net_acertoperguntaprova {
-  ID        Int? @id @default(autoincrement())
+  ID        Int @id @default(autoincrement())
   IDProva   Int?  
   IDQuestao Int?  
   IDSerie   Int?  
@@ -140,7 +140,7 @@ model net_acertoperguntaprova {
   }
 
 model net_acessorestrito {
-  ID                                                                                  Int?                                       @id @default(autoincrement())
+  ID                                                                                  Int                                       @id @default(autoincrement())
   IDPerfil                                                                            Int?                                       @default(0)
   Nome                                                                                String                                     @db.VarChar(100)
   CPF                                                                                 String?                                    @db.VarChar(14)
@@ -232,7 +232,7 @@ model net_acessorestrito {
 }
 
 model net_acessorestritousuariocaracteristicas {
-  ID                  Int?                @id @default(autoincrement())
+  ID                  Int                @id @default(autoincrement())
   IDUsuario           Int?  
   IDCaracteristica    Int?  
   net_caracteristicas net_caracteristicas? @relation(fields: [IDCaracteristica], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_acessorestritousuariocaracteristicas_2")
@@ -243,7 +243,7 @@ model net_acessorestritousuariocaracteristicas {
 }
 
 model net_afastamento {
-  ID            Int?      @id @default(autoincrement())
+  ID            Int      @id @default(autoincrement())
   IDEscola      Int?  
   IDProfessor   Int?  
   IDTipo        Int?  
@@ -254,7 +254,7 @@ model net_afastamento {
 }
 
 model net_agenda_escolar {
-  ID                             Int?                             @id @default(autoincrement())
+  ID                             Int                             @id @default(autoincrement())
   IDTurma                        Int?  
   IDAluno                        Int?
   IDUsuario                      Int?  
@@ -296,7 +296,7 @@ model net_agenda_escolar {
 }
 
 model net_agenda_escolar_acessos {
-  ID                 Int?                @id @default(autoincrement())
+  ID                 Int                @id @default(autoincrement())
   IDUsuario          Int?  
   IDAgenda           Int?  
   DataAcesso         DateTime?           @db.DateTime(0)
@@ -306,7 +306,7 @@ model net_agenda_escolar_acessos {
 }
 
 model net_agenda_escolar_alimentacao {
-  id                 Int?               @id @default(autoincrement())
+  id                 Int               @id @default(autoincrement())
   idAgenda           Int?  
   tipo               String?             @db.VarChar(100)
   quantia            String?             @db.VarChar(100)
@@ -316,13 +316,13 @@ model net_agenda_escolar_alimentacao {
 }
 
 model net_agenda_escolar_alunos {
-  ID       Int?@id @default(autoincrement())
+  ID       Int @id @default(autoincrement())
   IDAgenda Int?  
   IDAluno  Int?
   }
 
 model net_agenda_escolar_arquivos {
-  ID                 Int?               @id @default(autoincrement())
+  ID                 Int               @id @default(autoincrement())
   IDAgenda           Int?  
   Arquivo            String?             @db.VarChar(200)
   net_agenda_escolar net_agenda_escolar? @relation(fields: [IDAgenda], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_agenda_escolar_arquivos_1")
@@ -331,7 +331,7 @@ model net_agenda_escolar_arquivos {
 }
 
 model net_agenda_escolar_arquivos_respostas {
-  ID         Int?    @id @default(autoincrement())
+  ID         Int    @id @default(autoincrement())
   IDResposta Int?  
   IDUsuario  Int?  
   Arquivo    String? @db.VarChar(100)
@@ -339,19 +339,19 @@ model net_agenda_escolar_arquivos_respostas {
   }
 
 model net_agenda_escolar_arquivos_respostas_temp {
-  ID      Int?     @id @default(autoincrement())
+  ID      Int     @id @default(autoincrement())
   Sessao  String?  @db.VarChar(30)
   Arquivo String?  @db.VarChar(100)
 }
 
 model net_agenda_escolar_arquivos_temp {
-  ID      Int?    @id @default(autoincrement())
+  ID      Int    @id @default(autoincrement())
   Sessao  String? @db.VarChar(80)
   Arquivo String? @db.VarChar(200)
 }
 
 model net_agenda_escolar_assinaturas {
-  ID           Int?      @id @default(autoincrement())
+  ID           Int      @id @default(autoincrement())
   IDAgenda     Int?  
   IDUsuario    Int?  
   Assinatura   String?   @db.VarChar(100)
@@ -359,7 +359,7 @@ model net_agenda_escolar_assinaturas {
 }
 
 model net_agenda_escolar_avisos {
-  ID       Int?    @id @default(autoincrement())
+  ID       Int    @id @default(autoincrement())
   IDAgenda Int?
   Sessao   String? @db.VarChar(30)
   Aviso    String? @db.VarChar(100)
@@ -367,7 +367,7 @@ model net_agenda_escolar_avisos {
 }
 
 model net_agenda_escolar_medicacoes {
-  ID          Int?    @id @default(autoincrement())
+  ID          Int    @id @default(autoincrement())
   IDAgenda    Int?
   Nome        String?  @db.VarChar(50)
   Dosagem     String?  @db.VarChar(45)
@@ -380,13 +380,13 @@ model net_agenda_escolar_medicacoes {
 }
 
 model net_agenda_escolar_professor {
-  ID          Int? @id @default(autoincrement())
+  ID          Int @id @default(autoincrement())
   IDAgenda    Int?  
   IDProfessor Int?
   }
 
 model net_agenda_escolar_respostas {
-  ID                                         Int?                                         @id @default(autoincrement()) @db.UnsignedInt
+  ID                                         Int                                         @id @default(autoincrement()) @db.UnsignedInt
   IDAgenda                                   Int?  
   IDUsuario                                  Int?  
   IDRespondida                               Int?
@@ -402,7 +402,7 @@ model net_agenda_escolar_respostas {
 }
 
 model net_agenda_escolar_respostas_destinatarios {
-  ID                           Int?                         @id @default(autoincrement())
+  ID                           Int                         @id @default(autoincrement())
   IDResposta                   Int?                         @db.UnsignedInt
   IDDestinatario               Int?                         @db.UnsignedInt
   IDPerfil                     Int?
@@ -413,7 +413,7 @@ model net_agenda_escolar_respostas_destinatarios {
 }
 
 model net_agenda_escolar_template {
-  id           Int?     @id @default(autoincrement())
+  id           Int     @id @default(autoincrement())
   dataCadastro DateTime? @db.DateTime(0)
   mensagem     String?  @db.MediumText
   alimentacao  String?  @db.VarChar(45)
@@ -440,26 +440,26 @@ model net_agenda_escolar_template {
 }
 
 model net_agendateams {
-  ID       Int?   @id @default(autoincrement())
+  ID       Int   @id @default(autoincrement())
   IDAgenda Int?  
   Link     String? @db.VarChar(500)
 }
 
 model net_agendaxarquivos {
-  ID       Int?    @id @default(autoincrement())
+  ID       Int    @id @default(autoincrement())
   IDAgenda Int?  
   Arquivo  String? @db.VarChar(200)
   Ordem    Int?
 }
 
 model net_agendaxarquivostemp {
-  ID      Int?   @id @default(autoincrement())
+  ID      Int   @id @default(autoincrement())
   Arquivo String? @db.VarChar(200)
   Sessao  String? @db.VarChar(45)
 }
 
 model net_ajudas {
-  ID_Ajuda   Int?       @id @default(autoincrement())
+  ID_Ajuda   Int       @id @default(autoincrement())
   ID_Perfil  Int?  
   Ordem      Int?  
   Pergunta   String?    @db.VarChar(1000)
@@ -471,7 +471,7 @@ model net_ajudas {
 }
 
 model net_alunohistorico {
-  ID                          Int?                          @id @default(autoincrement())
+  ID                          Int                          @id @default(autoincrement())
   IDAluno                     Int?  
   IDEscola                    Int? 
    SerieConcluiu              String?                        @db.VarChar(45)
@@ -497,7 +497,7 @@ model net_alunohistorico {
 }
 
 model net_alunohistorico_anos {
-  ID                       Int?                       @id @default(autoincrement())
+  ID                       Int                       @id @default(autoincrement())
   IDHistorico              Int?  
   Ano                      String?                     @db.VarChar(4)
   TotalBaseComum           String?                    @db.VarChar(45)
@@ -515,7 +515,7 @@ model net_alunohistorico_anos {
 }
 
 model net_alunohistorico_materias {
-  ID                 Int?               @id @default(autoincrement())
+  ID                 Int               @id @default(autoincrement())
   IDHistorico        Int?  
   IDMateria          Int?  
   Tipo               String?             @db.VarChar(60)
@@ -528,7 +528,7 @@ model net_alunohistorico_materias {
 }
 
 model net_alunohistorico_notas {
-  ID                      Int?                    @id @default(autoincrement())
+  ID                      Int                    @id @default(autoincrement())
   IDHistorico             Int?  
   IDMateria               Int?  
   IDAno                   Int?  
@@ -544,7 +544,7 @@ model net_alunohistorico_notas {
 }
 
 model net_alunoxturma {
-  ID                 Int?               @id @default(autoincrement())
+  ID                 Int               @id @default(autoincrement())
   IDAluno            Int?  
   IDTurma            Int?  
   Ordem              Int?  
@@ -563,7 +563,7 @@ model net_alunoxturma {
 }
 
 model net_app_pushtoken {
-  id                 Int?                @id @default(autoincrement())
+  id                 Int                @id @default(autoincrement())
   idUser             Int?
   idDevice           String?             @db.VarChar(500)
   token              String?             @db.VarChar(500)
@@ -573,21 +573,21 @@ model net_app_pushtoken {
 }
 
 model net_aprendamaiscantigas {
-  id    Int?    @id @default(autoincrement())
+  id    Int    @id @default(autoincrement())
   name  String? @db.VarChar(100)
   image String? @db.VarChar(100)
   url   String? @db.VarChar(100)
 }
 
 model net_aprendamaispersonagens {
-  id    Int?    @id @default(autoincrement())
+  id    Int    @id @default(autoincrement())
   name  String? @db.VarChar(100)
   image String? @db.VarChar(100)
   url   String? @db.VarChar(100)
 }
 
 model net_assessoriacategorias {
-  ID                  Int?                @id @default(autoincrement())
+  ID                  Int                @id @default(autoincrement())
   Categoria           String?              @db.VarChar(200)
   Ordem               Int?
   Ativo               Boolean?             @default(true)
@@ -598,7 +598,7 @@ model net_assessoriacategorias {
 }
 
 model net_assessoriasubcategorias {
-  ID                  Int?                @id @default(autoincrement())
+  ID                  Int                @id @default(autoincrement())
   Subcategoria        String?              @db.VarChar(200)
   Ordem               Int?
   Ativo               Boolean?             @default(true)
@@ -610,7 +610,7 @@ model net_assessoriasubcategorias {
 }
 
 model net_assessoriatipos {
-  ID                          Int?                          @id @default(autoincrement())
+  ID                          Int                          @id @default(autoincrement())
   Tipo                        String?                        @db.VarChar(100)
   Ordem                       Int?
   Ativo                       Boolean?                       @default(true)
@@ -619,7 +619,7 @@ model net_assessoriatipos {
 }
 
 model net_assessoriavideos {
-  ID                             Int?                             @id @default(autoincrement())
+  ID                             Int                             @id @default(autoincrement())
   IDCategoria                    Int?
   Data                           DateTime?                         @db.DateTime(0)
   Titulo                         String?                           @db.VarChar(200)
@@ -639,7 +639,7 @@ model net_assessoriavideos {
 }
 
 model net_assessoriaxmasterprincipal {
-  ID                   Int?                 @id @default(autoincrement())
+  ID                   Int                 @id @default(autoincrement())
   IDAssessoria         Int?  
   IDMasterPrincipal    Int?  
   Ativo                Boolean?              @default(true)
@@ -652,7 +652,7 @@ model net_assessoriaxmasterprincipal {
 }
 
 model net_atividades_complementares {
-  id           Int?          @id @default(autoincrement())
+  id           Int          @id @default(autoincrement())
   idConteudo   Int?
   arquivo      String?       @db.VarChar(100)
   net_conteudo net_conteudo? @relation(fields: [idConteudo], references: [ID], onDelete: Cascade, map: "fk_idConteudo")
@@ -661,7 +661,7 @@ model net_atividades_complementares {
 }
 
 model net_bibliotecadigital {
-  ID                     Int?    @id @default(autoincrement())
+  ID                     Int    @id @default(autoincrement())
   IDColecao              Int?  
   Titulo                 String? @db.VarChar(50)
   Imagem                 String? @db.VarChar(100)
@@ -670,21 +670,21 @@ model net_bibliotecadigital {
 }
 
 model net_bibliotecadigitalcolecao {
-  ID      Int?    @id @default(autoincrement())
+  ID      Int    @id @default(autoincrement())
   Colecao String?  @db.VarChar(100)
   Ordem   Int?  
   Ativo   Boolean? @default(true)
 }
 
 model net_bibliotecadigitalxmaster {
-  ID           Int?     @id @default(autoincrement())
+  ID           Int     @id @default(autoincrement())
   IDMaster     Int?  
   IDBiblioteca Int?  
   DataCadastro DateTime? @default(now()) @db.Timestamp(0)
 }
 
 model net_blog {
-  ID                 Int?                 @id @default(autoincrement())
+  ID                 Int                 @id @default(autoincrement())
   Titulo             String?               @db.VarChar(50)
   Foto               String?              @db.VarChar(45)
   Descricao          String?              @db.Text
@@ -700,7 +700,7 @@ model net_blog {
 }
 
 model net_blogcategoria {
-  ID          Int?       @id @default(autoincrement())
+  ID          Int      @id @default(autoincrement())
   Categoria   String?     @db.VarChar(45)
   URLAmigavel String?    @db.VarChar(45)
   Ativo       Boolean?    @default(true)
@@ -708,19 +708,19 @@ model net_blogcategoria {
 }
 
 model net_blogcomentario {
-  ID         Int?     @id @default(autoincrement())
+  ID         Int     @id @default(autoincrement())
   IDBlog     Int?  
   IDUsuario  Int?  
   Comentario String?   @db.Text
   Ativo      Boolean?  @default(false)
   Data       DateTime? @db.DateTime(0)
-  net_blog   net_blog @relation(fields: [IDBlog], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_blogcomentario_1")
+  net_blog   net_blog? @relation(fields: [IDBlog], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_blogcomentario_1")
 
   @@index([IDBlog], map: "FK_net_blogcomentario_1")
 }
 
 model net_blogfotos {
-  ID       Int?     @id @default(autoincrement())
+  ID       Int     @id @default(autoincrement())
   IDBlog   Int?  
   Foto     String?  @db.VarChar(45)
   Legenda  String?  @db.VarChar(45)
@@ -731,7 +731,7 @@ model net_blogfotos {
 }
 
 model net_boletim {
-  ID                       Int?               @id @default(autoincrement())
+  ID                       Int               @id @default(autoincrement())
   IDMateria                Int?  
   IDAluno                  Int?  
   IDSituacao               Int?               @default(1)
@@ -788,7 +788,7 @@ model net_boletim {
 }
 
 model net_calendarioescolar {
-  ID                     Int?                   @id @default(autoincrement())
+  ID                     Int                   @id @default(autoincrement())
   IDTurma                Int?  
   Periodo                String?                 @db.VarChar(50)
   Data                   DateTime?               @db.Date
@@ -802,14 +802,14 @@ model net_calendarioescolar {
 }
 
 model net_campoexperiencia {
-  id                               Int?                               @id @default(autoincrement())
+  id                               Int                               @id @default(autoincrement())
   campoExperiencia                 String?                             @db.VarChar(100)
   net_campoexperienciaxgamificacao net_campoexperienciaxgamificacao[]
   net_habilidade                   net_habilidade[]
 }
 
 model net_campoexperienciaxgamificacao {
-  id                   Int?                 @id @default(autoincrement())
+  id                   Int                 @id @default(autoincrement())
   idGamificacao        Int?  
   idCampoExperiencia   Int?  
   net_campoexperiencia net_campoexperiencia? @relation(fields: [idCampoExperiencia], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "idCampoExperiencia__cexg")
@@ -820,7 +820,7 @@ model net_campoexperienciaxgamificacao {
 }
 
 model net_caracteristicas {
-  ID                                       Int?                                       @id @default(autoincrement())
+  ID                                       Int                                       @id @default(autoincrement())
   IDTipo                                   Int?  
   Caracteristica                           String?                                     @db.VarChar(50)
   Ordem                                    Int?                                       @default(0)
@@ -832,14 +832,14 @@ model net_caracteristicas {
 }
 
 model net_cargo {
-  ID                Int?                @id @default(autoincrement())
+  ID                Int                @id @default(autoincrement())
   Cargo             String?              @db.VarChar(100)
   Ativo             Boolean?             @default(true)
   net_cargoxusuario net_cargoxusuario[]
 }
 
 model net_cargoxusuario {
-  ID                 Int?               @id @default(autoincrement())
+  ID                 Int               @id @default(autoincrement())
   IDCargo            Int?  
   IDUsuario          Int?  
   net_cargo          net_cargo?          @relation(fields: [IDCargo], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_cargoxusuario_1")
@@ -850,7 +850,7 @@ model net_cargoxusuario {
 }
 
 model net_cidades {
-  ID          Int?         @id @default(autoincrement())
+  ID          Int         @id @default(autoincrement())
   IDEstado    Int?  
   Cidade      String?       @db.VarChar(100)
   Ativo       Boolean?      @default(true)
@@ -861,7 +861,7 @@ model net_cidades {
 }
 
 model net_competenciaespecifica {
-  id                                 Int?                                 @id @default(autoincrement())
+  id                                 Int                                 @id @default(autoincrement())
   codigo                             String?                               @db.VarChar(20)
   competenciaEspecifica              String?                               @db.VarChar(400)
   idMateria                          Int?
@@ -872,7 +872,7 @@ model net_competenciaespecifica {
 }
 
 model net_competenciageral {
-  id                                 Int?                                 @id @default(autoincrement())
+  id                                 Int                                 @id @default(autoincrement())
   codigo                             Int?  
   competenciaGeral                   String?                               @db.VarChar(100)
   ativo                              Int?                                 @db.TinyInt
@@ -880,12 +880,12 @@ model net_competenciageral {
 }
 
 model net_competencias {
-  id          Int?   @id @default(autoincrement())
+  id          Int   @id @default(autoincrement())
   competencia String @db.VarChar(45)
 }
 
 model net_comunicados {
-  ID                         Int?                         @id @default(autoincrement())
+  ID                         Int                         @id @default(autoincrement())
   Data                       DateTime?                    @db.DateTime(0)
   DataCadastro               DateTime?                     @default(now()) @db.Timestamp(0)
   Titulo                     String?                       @db.VarChar(500)
@@ -923,7 +923,7 @@ model net_comunicados {
 }
 
 model net_comunicadosacesso {
-  ID           Int?     @id @default(autoincrement())
+  ID           Int     @id @default(autoincrement())
   IDComunicado Int?  
   IDUsuario    Int?  
   DataAcesso   DateTime? @db.DateTime(0)
@@ -932,7 +932,7 @@ model net_comunicadosacesso {
 }
 
 model net_comunicadosaluno {
-  ID                 Int?               @id @default(autoincrement())
+  ID                 Int               @id @default(autoincrement())
   IDComunicado       Int?  
   IDAluno            Int?  
   net_acessorestrito net_acessorestrito? @relation(fields: [IDAluno], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_comunicadosaluno_2")
@@ -943,7 +943,7 @@ model net_comunicadosaluno {
 }
 
 model net_comunicadosgestores {
-  ID                 Int?               @id @default(autoincrement())
+  ID                 Int               @id @default(autoincrement())
   IDComunicado       Int?  
   IDGestor           Int?  
   Perfil             Boolean?            @default(false)
@@ -955,7 +955,7 @@ model net_comunicadosgestores {
 }
 
 model net_comunicadosprofessores {
-  ID                 Int?               @id @default(autoincrement())
+  ID                 Int               @id @default(autoincrement())
   IDComunicado       Int?  
   IDProfessor        Int?  
   net_comunicados    net_comunicados?    @relation(fields: [IDComunicado], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_comunicadosprofessores_1")
@@ -966,7 +966,7 @@ model net_comunicadosprofessores {
 }
 
 model net_comunicadosresponsavel {
-  ID                 Int?               @id @default(autoincrement())
+  ID                 Int               @id @default(autoincrement())
   IDComunicado       Int?  
   IDResponsavel      Int?  
   net_comunicados    net_comunicados?    @relation(fields: [IDComunicado], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_comunicadosresponsavel_2")
@@ -977,7 +977,7 @@ model net_comunicadosresponsavel {
 }
 
 model net_comunicadosrespostas {
-  ID                     Int?                     @id @default(autoincrement())
+  ID                     Int                     @id @default(autoincrement())
   IDComunicado           Int?  
   IDUsuario              Int? 
   DataCadastro           DateTime?                 @default(now()) @db.DateTime(0)
@@ -997,13 +997,13 @@ model net_comunicadosrespostas {
 }
 
 model net_comunicadosrespostastemp {
-  ID      Int?   @id @default(autoincrement()) @db.UnsignedInt
+  ID      Int   @id @default(autoincrement()) @db.UnsignedInt
   Arquivo String? @db.VarChar(200)
   Sessao  String? @db.VarChar(45)
 }
 
 model net_comunicadossalas {
-  ID              Int?            @id @default(autoincrement())
+  ID              Int            @id @default(autoincrement())
   IDComunicado    Int?  
   IDSala          Int?  
   net_comunicados net_comunicados? @relation(fields: [IDComunicado], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_comunicadossalas_1")
@@ -1014,7 +1014,7 @@ model net_comunicadossalas {
 }
 
 model net_comunicadosturma {
-  ID              Int?            @id @default(autoincrement())
+  ID              Int            @id @default(autoincrement())
   IDComunicado    Int?  
   IDTurma         Int?  
   net_comunicados net_comunicados? @relation(fields: [IDComunicado], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_comunicadosturma_1")
@@ -1025,7 +1025,7 @@ model net_comunicadosturma {
 }
 
 model net_comunicadosturno {
-  ID              Int?            @id @default(autoincrement())
+  ID              Int            @id @default(autoincrement())
   IDComunicado    Int?  
   IDTurno         Int?  
   net_comunicados net_comunicados? @relation(fields: [IDComunicado], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_comunicadosturno_1")
@@ -1036,7 +1036,7 @@ model net_comunicadosturno {
 }
 
 model net_comunicadoxusuario {
-  ID                       Int?                     @id
+  ID                       Int                     @id
   IDResposta               Int?  
   IDComunicado             Int?  
   IDDe                     Int?  
@@ -1049,7 +1049,7 @@ model net_comunicadoxusuario {
 }
 
 model net_configuracaocomercial {
-  ID                 Int?               @id @default(autoincrement())
+  ID                 Int               @id @default(autoincrement())
   IDMasterPrincipal  Int?  
   IDEnsino           Int?  
   DataInicialVigente String?            @db.VarChar(45)
@@ -1062,7 +1062,7 @@ model net_configuracaocomercial {
 }
 
 model net_configuracaonotas {
-  ID             Int?           @id @default(autoincrement())
+  ID             Int           @id @default(autoincrement())
   IDEscola       Int?  
   IDEnsino       Int?  
   Nota           String?         @db.VarChar(10)
@@ -1076,7 +1076,7 @@ model net_configuracaonotas {
 }
 
 model net_configuracaoturmasminmax {
-  ID           Int?         @id @default(autoincrement())
+  ID           Int         @id @default(autoincrement())
   IDTurma      Int?  
   IDMateria    Int?  
   NotaMinima   Decimal?      @db.Decimal(5, 2)
@@ -1089,7 +1089,7 @@ model net_configuracaoturmasminmax {
 }
 
 model net_conteudo {
-  ID                            Int?                            @id @default(autoincrement())
+  ID                            Int                            @id @default(autoincrement())
   IDSubTipo                     Int?                            @default(0)
   ID_SubItem                    Int?                            @default(0)
   IDEnsino                      Int?                            @default(0)
@@ -1101,7 +1101,7 @@ model net_conteudo {
   Tipo                          String?                         @default("A") @db.VarChar(1)
   Liberado                      String?                         @db.VarChar(1)
   net_tipoensino                net_tipoensino?                 @relation(fields: [IDEnsino], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_conteudo_3")
-  net_subtipoconteudo           net_subtipoconteudo             @relation(fields: [IDSubTipo], references: [ID], onDelete: NoAction, onUpdate: NoAction, map: "FK_net_conteudo_1")
+  net_subtipoconteudo           net_subtipoconteudo?             @relation(fields: [IDSubTipo], references: [ID], onDelete: NoAction, onUpdate: NoAction, map: "FK_net_conteudo_1")
   net_conteudossubitens         net_conteudossubitens?          @relation(fields: [ID_SubItem], references: [ID], onDelete: NoAction, onUpdate: NoAction, map: "FK_net_conteudo_2")
   net_atividades_complementares net_atividades_complementares[]
   net_conteudoxmasterprincipal  net_conteudoxmasterprincipal[]
@@ -1112,7 +1112,7 @@ model net_conteudo {
 }
 
 model net_conteudo_erratas {
-  ID                                   Int?                                   @id @default(autoincrement())
+  ID                                   Int                                   @id @default(autoincrement())
   IDSubTipo                            Int?                                   @default(0)
   IDSubItem                            Int?                                   @default(0)
   IDEnsino                             Int?                                   @default(0)
@@ -1126,7 +1126,7 @@ model net_conteudo_erratas {
 }
 
 model net_conteudo_erratasxmasterprincipal {
-  ID                   Int?                 @id @default(autoincrement())
+  ID                   Int                 @id @default(autoincrement())
   IDErrata             Int?  
   IDMasterPrincipal    Int?
   Ativo                Boolean?             @default(true)
@@ -1139,7 +1139,7 @@ model net_conteudo_erratasxmasterprincipal {
 }
 
 model net_conteudomultimidia {
-  ID                           Int?                           @id @default(autoincrement())
+  ID                           Int                           @id @default(autoincrement())
   IDEnsino                     Int?                           @db.UnsignedInt
   IDSerie                      Int?                           @db.UnsignedInt
   Titulo                       String?                        @db.VarChar(100)
@@ -1150,7 +1150,7 @@ model net_conteudomultimidia {
 }
 
 model net_conteudossubitens {
-  ID           Int?           @id @default(autoincrement())
+  ID           Int           @id @default(autoincrement())
   ID_Sub       Int?  
   SubItem      String?         @db.VarChar(50)
   Ativo        Boolean?        @default(true)
@@ -1161,7 +1161,7 @@ model net_conteudossubitens {
 }
 
 model net_conteudoultimidiaxmaster {
-  ID                     Int?                    @id @default(autoincrement())
+  ID                     Int                    @id @default(autoincrement())
   IDConteudo             Int?
   IDMaster               Int?
   DataCadastro           DateTime?                @default(now()) @db.Timestamp(0)
@@ -1173,7 +1173,7 @@ model net_conteudoultimidiaxmaster {
 }
 
 model net_conteudoxmasterprincipal {
-  ID                 Int?               @id @default(autoincrement())
+  ID                 Int               @id @default(autoincrement())
   IDConteudo         Int?  
   IDMasterPrincipal  Int?  
   Ativo              Boolean?            @default(true)
@@ -1186,7 +1186,7 @@ model net_conteudoxmasterprincipal {
 }
 
 model net_conteudoxsubanos {
-  ID                 Int?@id @default(autoincrement())
+  ID                 Int @id @default(autoincrement())
   ID_SubtipoConteudo Int?  
   ID_Ensino          Int?  
   ID_Serie           Int?  
@@ -1194,7 +1194,7 @@ model net_conteudoxsubanos {
   }
 
 model net_controle {
-  ID                           Int?                           @id @default(autoincrement())
+  ID                           Int                           @id @default(autoincrement())
   Login                        String?                         @db.VarChar(45)
   Senha                        String?                         @db.VarChar(45)
   Ativo                        Boolean?                        @default(true)
@@ -1203,7 +1203,7 @@ model net_controle {
 }
 
 model net_controlelogs {
-  ID         Int?     @id @default(autoincrement())
+  ID         Int     @id @default(autoincrement())
   IDUsuario  Int?  
   IP         String?   @db.VarChar(20)
   Data       DateTime? @default(now()) @db.Timestamp(0)
@@ -1215,7 +1215,7 @@ model net_controlelogs {
 }
 
 model net_controlepagina {
-  ID                           Int?                           @id @default(autoincrement())
+  ID                           Int                           @id @default(autoincrement())
   Titulo                       String?                         @default("") @db.VarChar(100)
   Menu                         String?                         @default("") @db.VarChar(45)
   Pagina                       String?                         @db.VarChar(100)
@@ -1225,7 +1225,7 @@ model net_controlepagina {
 }
 
 model net_controlepermissaousuario {
-  ID                 Int?               @id @default(autoincrement())
+  ID                 Int               @id @default(autoincrement())
   IDUsuario          Int?  
   IDPagina           Int?  
   net_controlepagina net_controlepagina? @relation(fields: [IDPagina], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_controlepermissaousuario_2")
@@ -1236,7 +1236,7 @@ model net_controlepermissaousuario {
 }
 
 model net_descritores {
-  ID                               Int?                               @id @default(autoincrement())
+  ID                               Int                               @id @default(autoincrement())
   IDTipoAvaliacao                  Int?  
   Codigo                           String?                             @db.VarChar(30)
   Descricao                        String?                             @db.VarChar(4000)
@@ -1249,7 +1249,7 @@ model net_descritores {
 }
 
 model net_descritoresxseries {
-  ID                           Int?                         @id @default(autoincrement())
+  ID                           Int                         @id @default(autoincrement())
   IDDescritor                  Int?                         @default(0)
   IDMateria                    Int?                         @default(0)
   IDSerie                      Int?                         @default(0)
@@ -1263,27 +1263,27 @@ model net_descritoresxseries {
 }
 
 model net_diarioclasse {
-  ID                   Int?                 @id @default(autoincrement())
+  ID                   Int                 @id @default(autoincrement())
   IDMateriaProfessor   Int?  
   IDTurma              Int? 
    Data                DateTime             @db.Date
   Conteudo             String               @db.Text
-  net_materiasxusuario net_materiasxusuario @relation(fields: [IDMateriaProfessor], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_diarioclasse_1")
-  net_turmas           net_turmas           @relation(fields: [IDTurma], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_diarioclasse_2")
+  net_materiasxusuario net_materiasxusuario? @relation(fields: [IDMateriaProfessor], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_diarioclasse_1")
+  net_turmas           net_turmas?           @relation(fields: [IDTurma], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_diarioclasse_2")
 
   @@index([IDMateriaProfessor], map: "FK_net_DiarioClasse_1")
   @@index([IDTurma], map: "FK_net_DiarioClasse_2")
 }
 
 model net_dificuldades {
-  id                                 Int?                                 @id @default(autoincrement())
+  id                                 Int                                 @id @default(autoincrement())
   dificuldades                       String                               @db.VarChar(100)
   net_materialdidaticopergunta       net_materialdidaticopergunta[]
   net_materialdidaticoperguntateste2 net_materialdidaticoperguntateste2[]
 }
 
 model net_emailsrecebem {
-  ID_Email           Int?    @id @default(autoincrement())
+  ID_Email           Int    @id @default(autoincrement())
   Portal             String? @default("0") @db.VarChar(500)
   EmailEnvia         String  @db.VarChar(100)
   EmailEnviaSenha    String  @db.VarChar(45)
@@ -1291,7 +1291,7 @@ model net_emailsrecebem {
 }
 
 model net_escola {
-  ID                                Int?                                @id @default(autoincrement())
+  ID                                Int                                @id @default(autoincrement())
   Nome                              String?                              @db.VarChar(100)
   Fone                              String?                             @db.VarChar(500)
   IDCidade                          Int?  
@@ -1333,7 +1333,7 @@ model net_escola {
 }
 
 model net_escolaxensino {
-  ID             Int?           @id @default(autoincrement())
+  ID             Int           @id @default(autoincrement())
   IDEscola       Int?  
   IDEnsino       Int?  
   net_tipoensino net_tipoensino? @relation(fields: [IDEnsino], references: [ID], onDelete: NoAction, onUpdate: NoAction, map: "FK_net_escolaxensino_2")
@@ -1344,7 +1344,7 @@ model net_escolaxensino {
 }
 
 model net_escolaxmaster {
-  ID                 Int?               @id @default(autoincrement())
+  ID                 Int               @id @default(autoincrement())
   IDEscola           Int?  
   IDMasterPrincipal  Int?  
   net_escola         net_escola?         @relation(fields: [IDEscola], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_escolaxmaster_1")
@@ -1355,7 +1355,7 @@ model net_escolaxmaster {
 }
 
 model net_escolaxusuario {
-  ID                 Int?               @id @default(autoincrement())
+  ID                 Int               @id @default(autoincrement())
   IDEscola           Int?  
   IDUsuario          Int?  
   Data               DateTime?           @default(now()) @db.Timestamp(0)
@@ -1367,7 +1367,7 @@ model net_escolaxusuario {
 }
 
 model net_estados {
-  ID          Int?          @id @default(autoincrement())
+  ID          Int          @id @default(autoincrement())
   Sigla       String?        @db.VarChar(2)
   Estado      String?        @db.VarChar(45)
   Ativo       Boolean?       @default(true)
@@ -1375,14 +1375,14 @@ model net_estados {
 }
 
 model net_faixaidades {
-  ID      Int?  @id @default(autoincrement())
+  ID      Int  @id @default(autoincrement())
   IDSerie Int?  
   De      Int?  
   Ate     Int?
   }
 
 model net_faltas {
-  ID                 Int?               @id @default(autoincrement())
+  ID                 Int               @id @default(autoincrement())
   IDMateria          Int? 
    IDAluno           Int?  
    Data              DateTime?           @db.Date
@@ -1402,7 +1402,7 @@ model net_faltas {
 }
 
 model net_faqperguntas {
-  ID       Int?     @id @default(autoincrement())
+  ID       Int     @id @default(autoincrement())
   Pergunta String?   @db.VarChar(100)
   Resposta String?   @db.Text
   Ordem    Int? 
@@ -1410,7 +1410,7 @@ model net_faqperguntas {
 }
 
 model net_formacao_avaliacao_aluno {
-  ID                 Int?               @id @default(autoincrement())
+  ID                 Int               @id @default(autoincrement())
   idCadastro         Int?  
   idCurso            Int?  
   idPergunta         Int?  
@@ -1423,7 +1423,7 @@ model net_formacao_avaliacao_aluno {
 }
 
 model net_formacaocertificados {
-  ID              Int?      @id @default(autoincrement())
+  ID              Int      @id @default(autoincrement())
   DataCadastro    DateTime?  @default(now()) @db.Timestamp(0)
   UsuarioControle Int?      @default(0)
   IDMaster        Int?      @default(0)
@@ -1439,7 +1439,7 @@ model net_formacaocertificados {
 }
 
 model net_formacaoxalunos {
-  ID                   Int?      @id @default(autoincrement())
+  ID                   Int      @id @default(autoincrement())
   idCurso              Int?  
   idUsuario            Int?
   Data                 DateTime?  @default(now()) @db.DateTime(0)
@@ -1458,7 +1458,7 @@ model net_formacaoxalunos {
 }
 
 model net_formacaoxmasters {
-  ID                 Int?               @id @default(autoincrement())
+  ID                 Int               @id @default(autoincrement())
   IDFormacao         Int?  
   IDMaster           Int? 
   Data               DateTime?           @default(now()) @db.Timestamp(0)
@@ -1468,7 +1468,7 @@ model net_formacaoxmasters {
 }
 
 model net_formulacalculo {
-  ID                    Int?                  @id @default(autoincrement())
+  ID                    Int                  @id @default(autoincrement())
   IDPeriodo             Int?                  @default(0)
   IDMateriaProfessor    Int?                  @default(0)
   IDTurma               Int?                  @default(0)
@@ -1490,14 +1490,14 @@ model net_formulacalculo {
 }
 
 model net_formulacalculolegenda {
-  ID      Int?    @id @default(autoincrement())
+  ID      Int    @id @default(autoincrement())
   Sigla   String?  @db.VarChar(15)
   Legenda String?  @db.VarChar(50)
   Ativo   Boolean? @default(true)
 }
 
 model net_gamificacao {
-  id                               Int?                               @id @default(autoincrement())
+  id                               Int                               @id @default(autoincrement())
   codigo                           String?                             @db.VarChar(20)
   nome                             String?                             @db.VarChar(150)
   url                              String?                             @db.VarChar(150)
@@ -1511,7 +1511,7 @@ model net_gamificacao {
 }
 
 model net_gradeaulas {
-  ID                   Int?                 @id @default(autoincrement())
+  ID                   Int                 @id @default(autoincrement())
   IDGrade              Int?
   IDTurma              Int?  
   DiaSemana            Int?  
@@ -1529,7 +1529,7 @@ model net_gradeaulas {
 }
 
 model net_gradecalendarioescolar {
-  ID                    Int?                  @id @default(autoincrement())
+  ID                    Int                  @id @default(autoincrement())
   IDPeriodo             Int?  
   DataI                 String?                @db.VarChar(5)
   DataF                 String?                @db.VarChar(5)
@@ -1542,7 +1542,7 @@ model net_gradecalendarioescolar {
 }
 
 model net_gradehorarios {
-  ID                     Int?             @id @default(autoincrement())
+  ID                     Int             @id @default(autoincrement())
   IDEscola               Int?  
   Grade                  String?           @db.VarChar(50)
   HorarioInicial         String?           @db.VarChar(5)
@@ -1557,7 +1557,7 @@ model net_gradehorarios {
 }
 
 model net_habilidade {
-  id                         Int?                         @id @default(autoincrement())
+  id                         Int                         @id @default(autoincrement())
   codigo                     String?                       @db.VarChar(10)
   habilidade                 String?                       @db.LongText
   idCampoExperiencia         Int?  
@@ -1568,7 +1568,7 @@ model net_habilidade {
 }
 
 model net_habilidadesef {
-  id                           Int?                          @id @default(autoincrement())
+  id                           Int                          @id @default(autoincrement())
   codigo                       String?                        @db.VarChar(45)
   habilidade                   String?                        @db.VarChar(4000)
   ativo                        Int?                          @db.TinyInt
@@ -1579,7 +1579,7 @@ model net_habilidadesef {
 }
 
 model net_habilidadexgamificacao {
-  id              Int?            @id @default(autoincrement())
+  id              Int            @id @default(autoincrement())
   idGamificacao   Int?  
   idHabilidade    Int?  
   net_gamificacao net_gamificacao? @relation(fields: [idGamificacao], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "idGamificacao")
@@ -1590,17 +1590,17 @@ model net_habilidadexgamificacao {
 }
 
 model net_habilidadexpergunta {
-  id                           Int?                         @id @default(autoincrement())
+  id                           Int                         @id @default(autoincrement())
   idPergunta                   Int?  
   idHabilidade                 Int?  
   primario                     Int?                         @db.TinyInt
-  net_materialdidaticopergunta net_materialdidaticopergunta @relation(fields: [idPergunta], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "fk_idPergunta")
+  net_materialdidaticopergunta net_materialdidaticopergunta? @relation(fields: [idPergunta], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "fk_idPergunta")
 
   @@index([idPergunta], map: "fk_idPergunta_idx")
 }
 
 model net_ideb {
-  ID           Int?     @id @default(autoincrement())
+  ID           Int     @id @default(autoincrement())
   IDMaster     Int?  
   IDTipoEnsino Int?  
   Ano          Int?
@@ -1610,7 +1610,7 @@ model net_ideb {
 }
 
 model net_informativo {
-  ID           Int?       @id @default(autoincrement())
+  ID           Int       @id @default(autoincrement())
   IDEscola     Int?  
   DataCadastro DateTime?   @default(now()) @db.Timestamp(0)
   Data         DateTime?   @db.Date
@@ -1622,7 +1622,7 @@ model net_informativo {
 }
 
 model net_itenshome {
-  ID        Int?     @id @default(autoincrement())
+  ID        Int     @id @default(autoincrement())
   Foto      String?   @db.VarChar(45)
   Titulo    String?   @db.VarChar(45)
   Descricao String?  @db.Text
@@ -1631,7 +1631,7 @@ model net_itenshome {
   }
 
 model net_lequeacessos {
-  id                Int?               @id @default(autoincrement())
+  id                Int               @id @default(autoincrement())
   idUsuario         Int?
   idCantiga         Int?
   dataAcesso        DateTime?          @db.DateTime(0)
@@ -1643,7 +1643,7 @@ model net_lequeacessos {
 }
 
 model net_lequeatividades {
-  id                    Int?               @id @default(autoincrement())
+  id                    Int               @id @default(autoincrement())
   idCantiga             Int?
   urlNomeVideoAtividade String?            @db.VarChar(100)
   urlVideoAtividade     String?            @db.VarChar(100)
@@ -1660,7 +1660,7 @@ model net_lequeatividades {
 }
 
 model net_lequecantigas {
-  id                  Int?                  @id @default(autoincrement())
+  id                  Int                  @id @default(autoincrement())
   nome                String?               @db.VarChar(100)
   videoCantiga        String?               @db.VarChar(100)
   urlCantiga          String?               @db.VarChar(100)
@@ -1669,7 +1669,7 @@ model net_lequecantigas {
 }
 
 model net_lequenumcriancas {
-  id                Int?               @id @default(autoincrement())
+  id                Int               @id @default(autoincrement())
   idUser            Int?
   idade             Int?
   net_lequeusuarios net_lequeusuarios? @relation(fields: [idUser], references: [id], onUpdate: NoAction, map: "fkIDUser")
@@ -1678,7 +1678,7 @@ model net_lequenumcriancas {
 }
 
 model net_lequeusuarios {
-  id                   Int?                   @id @default(autoincrement())
+  id                   Int                   @id @default(autoincrement())
   cep                  String?                @db.VarChar(10)
   cidade               String?                @db.VarChar(100)
   email                String?                @db.VarChar(100)
@@ -1697,7 +1697,7 @@ model net_lequeusuarios {
 }
 
 model net_logicaeducacional {
-  ID                 Int?                 @id @default(autoincrement())
+  ID                 Int                 @id @default(autoincrement())
   IDSerie            Int?  
   IDBimestre         Int?  
   IDMateria          Int?  
@@ -1714,7 +1714,7 @@ model net_logicaeducacional {
 }
 
 model net_logicaxmasters {
-  ID                    Int?                  @id @default(autoincrement())
+  ID                    Int                  @id @default(autoincrement())
   IDLogica              Int? 
   IDMaster              Int?  
   DataCadastro          DateTime?              @default(now()) @db.Timestamp(0)
@@ -1726,7 +1726,7 @@ model net_logicaxmasters {
 }
 
 model net_logs {
-  ID                 Int?               @id @default(autoincrement())
+  ID                 Int               @id @default(autoincrement())
   IDUsuario          Int?  
   Data               DateTime?           @default(now()) @db.Timestamp(0)
   Pagina             String?            @db.VarChar(250)
@@ -1742,7 +1742,7 @@ model net_logs {
 }
 
 model net_masterautorizado {
-  ID                                                                            Int?               @id @default(autoincrement())
+  ID                                                                            Int               @id @default(autoincrement())
   IDMasterPrincipal                                                             Int?  
   IDMaster                                                                      Int?  
   net_acessorestrito_net_acessorestritoTonet_masterautorizado_IDMaster          net_acessorestrito? @relation("net_acessorestritoTonet_masterautorizado_IDMaster", fields: [IDMaster], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_masterautorizado_2")
@@ -1753,7 +1753,7 @@ model net_masterautorizado {
 }
 
 model net_masterxmaterialdidaticopergunta {
-  ID                           Int?                         @id @default(autoincrement())
+  ID                           Int                         @id @default(autoincrement())
   IDMaster                     Int?
   IDPergunta                   Int?  
   IDMateria                    Int?  
@@ -1775,20 +1775,20 @@ model net_masterxmaterialdidaticopergunta {
 }
 
 model net_materiaistipos {
-  ID    Int?   @id @default(autoincrement())
+  ID    Int   @id @default(autoincrement())
   Tipo  String? @db.VarChar(100)
   Ativo Int?   @default(1)
 }
 
 model net_materialdidaticointroducao {
-  ID                                      Int?                                      @id @default(autoincrement())
+  ID                                      Int                                     @id @default(autoincrement())
   Introducao                              String?                                    @db.VarChar(4000)
   Ativo                                   Boolean?                                   @default(true)
   net_materialdidaticointroducaoxpergunta net_materialdidaticointroducaoxpergunta[]
 }
 
 model net_materialdidaticointroducaoxpergunta {
-  ID                             Int?                           @id @default(autoincrement())
+  ID                             Int                           @id @default(autoincrement())
   IDIntroducao                   Int?
   IDPergunta                     Int?  
   net_materialdidaticointroducao net_materialdidaticointroducao? @relation(fields: [IDIntroducao], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_materialdidaticointroducaoxpergunta_1")
@@ -1799,7 +1799,7 @@ model net_materialdidaticointroducaoxpergunta {
 }
 
 model net_materialdidaticomaterias {
-  ID                                  Int?                                  @id @default(autoincrement())
+  ID                                  Int                                  @id @default(autoincrement())
   Materia                             String?                                @db.VarChar(100)
   Ativo                               Boolean?                               @default(true)
   Sigla                               String?                                @db.VarChar(4)
@@ -1814,7 +1814,7 @@ model net_materialdidaticomaterias {
 }
 
 model net_materialdidaticopergunta {
-  ID                                         Int?                                         @id @default(autoincrement())
+  ID                                         Int                                         @id @default(autoincrement())
   IDMateria                                  Int?  
   IDSerie                                    Int?  
   IDPeriodo                                  Int?  
@@ -1860,7 +1860,7 @@ model net_materialdidaticopergunta {
 }
 
 model net_materialdidaticoperguntateste2 {
-  ID                           Int?                         @id @default(autoincrement())
+  ID                           Int                         @id @default(autoincrement())
   IDMateria                    Int?  
   IDSerie                      Int?  
   IDPeriodo                    Int?  
@@ -1904,7 +1904,7 @@ model net_materialdidaticoperguntateste2 {
 }
 
 model net_materialdidaticoperiodo {
-  ID                                  Int?                                  @id @default(autoincrement())
+  ID                                  Int                                  @id @default(autoincrement())
   Periodo                             String?                               @db.VarChar(100)
   Ativo                               Boolean?                               @default(true)
   net_masterxmaterialdidaticopergunta net_masterxmaterialdidaticopergunta[]
@@ -1913,7 +1913,7 @@ model net_materialdidaticoperiodo {
 }
 
 model net_materialdidaticopermissaoaluno {
-  ID                                 Int?                                 @id @default(autoincrement())
+  ID                                 Int                                 @id @default(autoincrement())
   DataI                              DateTime?                             @db.DateTime(0)
   DataF                              DateTime?                             @db.DateTime(0)
   IDPermissaoTurma                   Int?  
@@ -1928,7 +1928,7 @@ model net_materialdidaticopermissaoaluno {
 }
 
 model net_materialdidaticopermissaoturma {
-  ID                                 Int?                                 @id @default(autoincrement())
+  ID                                 Int                                 @id @default(autoincrement())
   IDProva                            Int?  
   IDTurma                            Int?  
   Referencia                         String?                              @db.VarChar(100)
@@ -1949,7 +1949,7 @@ model net_materialdidaticopermissaoturma {
 }
 
 model net_materialdidaticoprova {
-  ID                                 Int?                                 @id @default(autoincrement())
+  ID                                 Int                                 @id @default(autoincrement())
   DataCadastro                       DateTime?                             @default(now()) @db.Timestamp(0)
   IDEscola                           Int?                                 @default(0)
   IDEnsino                           Int?                                 @default(0)
@@ -1964,7 +1964,7 @@ model net_materialdidaticoprova {
 }
 
 model net_materialdidaticoprovaimpressa {
-  ID                Int?        @id @default(autoincrement())
+  ID                Int        @id @default(autoincrement())
   DataCadastro      DateTime?    @default(now()) @db.Timestamp(0)
   IDEscola          Int?        @default(0)
   IDEnsino          Int?        @default(0)
@@ -1980,34 +1980,34 @@ model net_materialdidaticoprovaimpressa {
 }
 
 model net_materialdidaticoprovaperguntas {
-  ID                           Int?                         @id @default(autoincrement())
+  ID                           Int                         @id @default(autoincrement())
   IDProva                      Int?                         @default(0)
   IDPergunta                   Int?  
   Peso                         Decimal?                      @default(0.00) @db.Decimal(5, 2)
   Sessao                       String?                       @db.VarChar(20)
   IDMasterPrincipal            Int?                         @default(0)
   DataCadastro                 DateTime?                     @default(now()) @db.Timestamp(0)
-  net_materialdidaticopergunta net_materialdidaticopergunta @relation(fields: [IDPergunta], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_materialdidaticoprovaperguntas_1")
+  net_materialdidaticopergunta net_materialdidaticopergunta? @relation(fields: [IDPergunta], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_materialdidaticoprovaperguntas_1")
 
   @@index([IDPergunta], map: "FK_net_materialdidaticoprovaperguntas_1")
   @@index([IDProva], map: "FK_net_materialdidaticoprovaperguntas_2")
 }
 
 model net_materialdidaticoprovaperguntasimpressa {
-  ID                           Int?                         @id @default(autoincrement())
+  ID                           Int                         @id @default(autoincrement())
   IDProva                      Int?                         @default(0)
   IDPergunta                   Int?                         @default(0)
   Sessao                       String?                      @db.VarChar(20)
   IDMasterPrincipal            Int?
   DataCadastro                 DateTime?                     @default(now()) @db.Timestamp(0)
-  net_materialdidaticopergunta net_materialdidaticopergunta @relation(fields: [IDPergunta], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_materialdidaticoprovaperguntasimpressa_2")
+  net_materialdidaticopergunta net_materialdidaticopergunta? @relation(fields: [IDPergunta], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_materialdidaticoprovaperguntasimpressa_2")
 
   @@index([IDProva], map: "FK_net_materialdidaticoprovaperguntasimpressa_1")
   @@index([IDPergunta], map: "FK_net_materialdidaticoprovaperguntasimpressa_2")
 }
 
 model net_materialdidaticoprovaresultado {
-  ID                                 Int?                               @id @default(autoincrement())
+  ID                                 Int                               @id @default(autoincrement())
   DataResposta                       DateTime?                           @default(now()) @db.Timestamp(0)
   IDPermissaoAluno                   Int?  
   IDPergunta                         Int?  
@@ -2025,7 +2025,7 @@ model net_materialdidaticoprovaresultado {
 }
 
 model net_materialdidaticoresposta {
-  ID                           Int?                         @id @default(autoincrement())
+  ID                           Int                         @id @default(autoincrement())
   IDPergunta                   Int?  
   Resposta                     String?                       @db.LongText
   Correta                      Boolean?                      @default(false)
@@ -2037,7 +2037,7 @@ model net_materialdidaticoresposta {
 }
 
 model net_materialdidaticoresposta_temp {
-  ID        Int?     @id @default(autoincrement())
+  ID        Int     @id @default(autoincrement())
   Sessao    String?   @db.VarChar(50)
   Resposta  String?  @db.Text
   Correta   Boolean? @default(false)
@@ -2045,7 +2045,7 @@ model net_materialdidaticoresposta_temp {
   }
 
 model net_materialdidaticousarnota {
-  ID                                 Int?                               @id @default(autoincrement())
+  ID                                 Int                               @id @default(autoincrement())
   IDPermissaoTurma                   Int?  
   Periodo                            String?                             @db.VarChar(50)
   Nota                               String?                             @db.VarChar(10)
@@ -2055,7 +2055,7 @@ model net_materialdidaticousarnota {
 }
 
 model net_materialdidaticoxdescritores {
-  ID                           Int?                         @id @default(autoincrement())
+  ID                           Int                         @id @default(autoincrement())
   IDPergunta                   Int?  
   IDDescritor                  Int?  
   net_descritores              net_descritores?              @relation(fields: [IDDescritor], references: [ID], onDelete: NoAction, map: "FK_net_materialdidaticoxdescritores_2")
@@ -2066,7 +2066,7 @@ model net_materialdidaticoxdescritores {
 }
 
 model net_materias {
-  ID                           Int?                           @id @default(autoincrement())
+  ID                           Int                           @id @default(autoincrement())
   Materia                      String?                         @db.VarChar(100)
   Ativo                        Boolean?                        @default(true)
   IDTipoEnsino                 Int?  
@@ -2085,7 +2085,7 @@ model net_materias {
 }
 
 model net_materiasxusuario {
-  ID                 Int?                 @id @default(autoincrement())
+  ID                 Int                 @id @default(autoincrement())
   IDMateria          Int?  
   IDUsuario          Int?  
   DataAlteracao      DateTime?             @default(now()) @db.Timestamp(0)
@@ -2100,7 +2100,7 @@ model net_materiasxusuario {
 }
 
 model net_matriculaonline {
-  ID             Int?     @id @default(autoincrement())
+  ID             Int     @id @default(autoincrement())
   IDEstado       Int?  
   IDCidade       Int?  
   IDPrefeitura   Int?  
@@ -2140,13 +2140,13 @@ model net_matriculaonline {
 }
 
 model net_matriculaonlinexcaracteristicas {
-  ID               Int? @id @default(autoincrement())
+  ID               Int @id @default(autoincrement())
   IDMatricula      Int?  
   IDCaracteristica Int?
   }
 
 model net_menur {
-  ID      Int?    @id @default(autoincrement())
+  ID      Int    @id @default(autoincrement())
   Aliases String?  @db.VarChar(50)
   Menu    String?  @db.VarChar(50)
   Ativo   Boolean? @default(true)
@@ -2154,7 +2154,7 @@ model net_menur {
 }
 
 model net_menus {
-  ID                   Int?                   @id @default(autoincrement())
+  ID                   Int                   @id @default(autoincrement())
   IDPerfil             Int?  
   IDMenuR              Int? 
   Cad                  Boolean?                @default(false)
@@ -2169,21 +2169,21 @@ model net_menus {
 }
 
 model net_multcompetencias {
-  id              Int?    @id @default(autoincrement())
+  id              Int    @id @default(autoincrement())
   idPergunta      Int?
   idCompetencia   Int?
   competenciaType String? @db.VarChar(20)
 }
 
 model net_naomostrar {
-  ID         Int?      @id @default(autoincrement())
+  ID         Int      @id @default(autoincrement())
   IDUsuario  Int?  
   Pagina     String?    @db.VarChar(45)
   DataClique DateTime? @db.DateTime(0)
 }
 
 model net_news {
-  ID_News Int?     @id @default(autoincrement())
+  ID_News Int     @id @default(autoincrement())
   Nome    String?  @db.VarChar(100)
   Email   String?  @db.VarChar(100)
   IP      String?  @db.VarChar(15)
@@ -2191,7 +2191,7 @@ model net_news {
 }
 
 model net_notificacoes {
-  ID          Int?      @id @default(autoincrement())
+  ID          Int      @id @default(autoincrement())
   IDItem      Int?  
   Tipo        String?    @db.VarChar(30)
   Data        DateTime?  @default(now()) @db.Timestamp(0)
@@ -2205,7 +2205,7 @@ model net_notificacoes {
 }
 
 model net_ocorrencias {
-  ID                       Int?                       @id @default(autoincrement())
+  ID                       Int                       @id @default(autoincrement())
   IDAluno                  Int?  
   Data                     DateTime?                   @db.DateTime(0)
   Ocorrencia               String?                     @db.VarChar(500)
@@ -2226,7 +2226,7 @@ model net_ocorrencias {
 }
 
 model net_ocorrenciaspara {
-  ID              Int?            @id @default(autoincrement())
+  ID              Int            @id @default(autoincrement())
   IDOcorrencia    Int?  
   IDPerfil        Int?  
   IDUsuario       Int?
@@ -2239,7 +2239,7 @@ model net_ocorrenciaspara {
 }
 
 model net_ocorrenciasrespostas {
-  ID              Int?            @id @default(autoincrement())
+  ID              Int            @id @default(autoincrement())
   IDOcorrencia    Int?  
   IDUsuario       Int?  
   DataCadastro    DateTime?        @default(now()) @db.Timestamp(0)
@@ -2251,16 +2251,16 @@ model net_ocorrenciasrespostas {
 }
 
 model net_parentesco {
-  ID                    Int?                    @id @default(autoincrement())
-  Parentesco            String                  @db.VarChar(50)
-  Ativo                 Boolean                 @default(true)
+  ID                    Int                    @id @default(autoincrement())
+  Parentesco            String?                  @db.VarChar(50)
+  Ativo                 Boolean?                 @default(true)
   net_responsavelxaluno net_responsavelxaluno[]
 }
 
 model net_perfil {
-  ID                  Int?                  @id @default(autoincrement())
-  Perfil              String                @db.VarChar(50)
-  Ativo               Boolean               @default(true)
+  ID                  Int                  @id @default(autoincrement())
+  Perfil              String?                @db.VarChar(50)
+  Ativo               Boolean?               @default(true)
   net_acessorestrito  net_acessorestrito[]
   net_ajudas          net_ajudas[]
   net_menus           net_menus[]
@@ -2268,11 +2268,14 @@ model net_perfil {
 }
 
 model net_periodocalendario {
-  ID                         Int?                         @id @default(autoincrement())
-  IDEscola                   Int?  IDEnsino                   Int?  Periodo                    String                       @db.VarChar(50)
-  Ano                        Int?  Ativo                      Boolean                      @default(true)
-  net_tipoensino             net_tipoensino               @relation(fields: [IDEnsino], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_periodocalendario_2")
-  net_escola                 net_escola                   @relation(fields: [IDEscola], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_periodocalendario_1")
+  ID                         Int                         @id @default(autoincrement())
+  IDEscola                   Int?  
+  IDEnsino                   Int?  
+  Periodo                    String?                       @db.VarChar(50)
+  Ano                        Int?  
+  Ativo                      Boolean?                      @default(true)
+  net_tipoensino             net_tipoensino?               @relation(fields: [IDEnsino], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_periodocalendario_2")
+  net_escola                 net_escola?                   @relation(fields: [IDEscola], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_periodocalendario_1")
   net_formulacalculo         net_formulacalculo[]
   net_gradecalendarioescolar net_gradecalendarioescolar[]
 
@@ -2281,29 +2284,33 @@ model net_periodocalendario {
 }
 
 model net_permissaousuario {
-  ID                 Int?               @id @default(autoincrement())
-  IDUsuario          Int?  IDMenu             Int?  Cad                Boolean            @default(false)
-  Alt                Boolean            @default(false)
-  Vis                Boolean            @default(false)
-  Exc                Boolean            @default(false)
-  DataCadastro       DateTime           @default(now()) @db.Timestamp(0)
-  net_menus          net_menus          @relation(fields: [IDMenu], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_permissaousuario_2")
-  net_acessorestrito net_acessorestrito @relation(fields: [IDUsuario], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_permissaousuario_1")
+  ID                 Int               @id @default(autoincrement())
+  IDUsuario          Int?  
+  IDMenu             Int?  
+  Cad                Boolean?            @default(false)
+  Alt                Boolean?            @default(false)
+  Vis                Boolean?            @default(false)
+  Exc                Boolean?            @default(false)
+  DataCadastro       DateTime?           @default(now()) @db.Timestamp(0)
+  net_menus          net_menus?          @relation(fields: [IDMenu], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_permissaousuario_2")
+  net_acessorestrito net_acessorestrito? @relation(fields: [IDUsuario], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_permissaousuario_1")
 
   @@index([IDUsuario], map: "FK_net_permissaousuario_1")
   @@index([IDMenu], map: "FK_net_permissaousuario_2")
 }
 
 model net_planejamentocolecoes {
-  ID      Int?    @id @default(autoincrement())
-  Colecao String  @db.VarChar(100)
-  Ativo   Boolean @default(true)
+  ID      Int    @id @default(autoincrement())
+  Colecao String?  @db.VarChar(100)
+  Ativo   Boolean? @default(true)
 }
 
 model net_planejamentos {
-  ID                      Int?                      @id @default(autoincrement())
-  IDColecao               Int?  IDSerie                 Int?                      @default(0)
-  IDFundamento            Int?  Titulo                  String?                   @db.VarChar(100)
+  ID                      Int                      @id @default(autoincrement())
+  IDColecao               Int?  
+  IDSerie                 Int?                      @default(0)
+  IDFundamento            Int?  
+  Titulo                  String?                   @db.VarChar(100)
   Ativo                   Boolean?                  @default(true)
   Arquivo                 String?                   @db.VarChar(100)
   Foto                    String?                   @db.VarChar(100)
@@ -2311,45 +2318,51 @@ model net_planejamentos {
 }
 
 model net_planejamentosplanos {
-  ID        Int?    @id @default(autoincrement())
-  IDColecao Int?  IDEnsino  Int?  Ativo     Boolean @default(true)
-  Titulo    String  @db.VarChar(100)
+  ID        Int    @id @default(autoincrement())
+  IDColecao Int?  
+  IDEnsino  Int?  
+  Ativo     Boolean? @default(true)
+  Titulo    String?  @db.VarChar(100)
   Foto      String? @db.VarChar(100)
   Arquivo   String? @db.VarChar(100)
 }
 
 model net_planejamentoxmaster {
-  ID                 Int?               @id @default(autoincrement())
-  IDPlanejamento     Int?  IDMaster           Int?  Data               DateTime           @default(now()) @db.Timestamp(0)
-  net_acessorestrito net_acessorestrito @relation(fields: [IDMaster], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_planejamentoxmaster_1")
-  net_planejamentos  net_planejamentos  @relation(fields: [IDPlanejamento], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_planejamentoxmaster_2")
+  ID                 Int               @id @default(autoincrement())
+  IDPlanejamento     Int?  
+  IDMaster           Int?  
+  Data               DateTime?           @default(now()) @db.Timestamp(0)
+  net_acessorestrito net_acessorestrito? @relation(fields: [IDMaster], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_planejamentoxmaster_1")
+  net_planejamentos  net_planejamentos?  @relation(fields: [IDPlanejamento], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_planejamentoxmaster_2")
 
   @@index([IDMaster], map: "FK_net_planejamentoxmaster_1")
   @@index([IDPlanejamento], map: "FK_net_planejamentoxmaster_2")
 }
 
 model net_planejamentoxusuario {
-  ID                 Int?               @id @default(autoincrement())
+  ID                 Int               @id @default(autoincrement())
   IDPlanejamento     Int?
-  IDUsuario          Int?  UF                 String?            @db.VarChar(30)
+  IDUsuario          Int?  
+  UF                 String?            @db.VarChar(30)
   Cidade             String?            @db.VarChar(100)
   Nome               String?            @db.VarChar(100)
   Email              String?            @db.VarChar(100)
   Cargo              String?            @db.VarChar(60)
-  Data               DateTime           @default(now()) @db.DateTime(0)
+  Data               DateTime?           @default(now()) @db.DateTime(0)
   Liberado           Boolean?           @default(false)
   DataLiberado       DateTime?          @db.DateTime(0)
   Acessado           Boolean?           @default(false)
   DataAcesso         DateTime?          @db.DateTime(0)
-  net_acessorestrito net_acessorestrito @relation(fields: [IDUsuario], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_planejamentoxusuario_1")
+  net_acessorestrito net_acessorestrito? @relation(fields: [IDUsuario], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_planejamentoxusuario_1")
 
   @@index([IDUsuario], map: "FK_net_planejamentoxusuario_1")
 }
 
 model net_podcasts {
-  ID                  Int?                  @id @default(autoincrement())
-  IDEnsino            Int?  IDSerie             Int?
-  Titulo              String                @db.VarChar(100)
+  ID                  Int                  @id @default(autoincrement())
+  IDEnsino            Int?  
+  IDSerie             Int?
+  Titulo              String?                @db.VarChar(100)
   Foto                String?               @db.VarChar(100)
   Ativo               Boolean?
   Arquivo             String?               @db.VarChar(100)
@@ -2357,10 +2370,10 @@ model net_podcasts {
 }
 
 model net_podcastsxmaster {
-  ID                 Int?                @id @default(autoincrement())
+  ID                 Int                @id @default(autoincrement())
   IDMaster           Int?
   IDPodcast          Int?
-  DataCadastro       DateTime            @default(now()) @db.Timestamp(0)
+  DataCadastro       DateTime?            @default(now()) @db.Timestamp(0)
   net_acessorestrito net_acessorestrito? @relation(fields: [IDMaster], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_podcastsxmaster_1")
   net_podcasts       net_podcasts?       @relation(fields: [IDPodcast], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_podcastsxmaster_2")
 
@@ -2369,7 +2382,7 @@ model net_podcastsxmaster {
 }
 
 model net_popescola {
-  ID         Int?      @id @default(autoincrement())
+  ID         Int      @id @default(autoincrement())
   IDMaster   Int?      @default(0)
   IDEscola   Int?      @default(0)
   IDGestor   Int?      @default(0)
@@ -2377,64 +2390,73 @@ model net_popescola {
   Video      String?   @db.VarChar(100)
   Arquivo    String?   @db.VarChar(100)
   Link       String?   @db.VarChar(100)
-  DataInicio DateTime  @db.DateTime(0)
+  DataInicio DateTime?  @db.DateTime(0)
   DataFim    DateTime? @db.DateTime(0)
-  Ativo      Boolean   @default(true)
+  Ativo      Boolean?   @default(true)
 }
 
 model net_popescola_banner {
-  ID        Int?   @id @default(autoincrement())
-  Sessao    String @db.VarChar(45)
-  Banner    String @db.LongText
+  ID        Int   @id @default(autoincrement())
+  Sessao    String? @db.VarChar(45)
+  Banner    String? @db.LongText
   IDUsuario Int?   @default(0)
 }
 
 model net_popnetbil {
-  ID         Int?      @id @default(autoincrement())
+  ID         Int      @id @default(autoincrement())
   Foto       String?   @db.VarChar(100)
   Video      String?   @db.VarChar(100)
   Arquivo    String?   @db.VarChar(100)
   Link       String?   @db.VarChar(100)
-  DataInicio DateTime  @db.DateTime(0)
+  DataInicio DateTime?  @db.DateTime(0)
   DataFim    DateTime? @db.DateTime(0)
-  Ativo      Boolean   @default(true)
+  Ativo      Boolean?   @default(true)
   Conteudo   String?   @db.Text
   IDPerfil   Int?      @default(0)
 }
 
 model net_professorfrequencia {
-  ID          Int?      @id @default(autoincrement())
-  IDMaster    Int?  IDEscola    Int?  IDProfessor Int?  DataFreq    DateTime? @db.Date
-  HoraI       DateTime  @db.Time(0)
-  HoraF       DateTime  @db.Time(0)
-  Tipo        String    @default("0") @db.VarChar(10)
-  Substituto  Boolean   @default(false)
+  ID          Int      @id @default(autoincrement())
+  IDMaster    Int?  
+  IDEscola    Int?  
+  IDProfessor Int?  
+  DataFreq    DateTime? @db.Date
+  HoraI       DateTime?  @db.Time(0)
+  HoraF       DateTime?  @db.Time(0)
+  Tipo        String?    @default("0") @db.VarChar(10)
+  Substituto  Boolean?   @default(false)
   IDTurma     Int?
   IDGrade     Int?
   Ativo       Boolean?  @default(true)
 }
 
 model net_redessociais {
-  ID    Int?    @id @default(autoincrement())
-  Rede  String  @db.VarChar(45)
-  Logo  String  @db.VarChar(45)
-  Link  String  @db.VarChar(100)
+  ID    Int    @id @default(autoincrement())
+  Rede  String?  @db.VarChar(45)
+  Logo  String?  @db.VarChar(45)
+  Link  String?  @db.VarChar(100)
   Ordem Int?
-  Ativo Boolean @default(true)
+  Ativo Boolean? @default(true)
 }
 
 model net_regioes {
-  ID           Int?     @id @default(autoincrement())
-  IDMaster     Int?  Regiao       String?  @db.VarChar(60)
+  ID           Int     @id @default(autoincrement())
+  IDMaster     Int?  
+  Regiao       String?  @db.VarChar(60)
   Descricao    String?  @db.VarChar(300)
-  DataCadastro DateTime @default(now()) @db.Timestamp(0)
+  DataCadastro DateTime? @default(now()) @db.Timestamp(0)
 }
 
 model net_registropedagogico {
-  ID                    Int?                    @id @default(autoincrement())
-  Data                  DateTime                @db.DateTime(0)
-  DataCadastro          DateTime                @default(now()) @db.Timestamp(0)
-  IDEscola              Int?  IDUsuario             Int?  IDProfessor           Int?  IDALuno               Int?  IDTurma               Int?  Atividade             String?                 @db.VarChar(500)
+  ID                    Int                    @id @default(autoincrement())
+  Data                  DateTime?                @db.DateTime(0)
+  DataCadastro          DateTime?                @default(now()) @db.Timestamp(0)
+  IDEscola              Int?  
+  IDUsuario             Int?  
+  IDProfessor           Int?  
+  IDALuno               Int?  
+  IDTurma               Int?  
+  Atividade             String?                 @db.VarChar(500)
   Objetivos             String?                 @db.VarChar(500)
   Desenvolvimento       String?                 @db.MediumText
   Observacoes           String?                 @db.LongText
@@ -2443,36 +2465,47 @@ model net_registropedagogico {
 }
 
 model net_registropedagogico_experiencias {
-  ID     Int?     @id @default(autoincrement())
-  Titulo String   @db.VarChar(100)
+  ID     Int     @id @default(autoincrement())
+  Titulo String?   @db.VarChar(100)
   Sigla  String?  @db.VarChar(5)
   Ordem  Int?
   Ativo  Boolean? @default(true)
 }
 
 model net_registropedagogico_xexperiencias {
-  ID            Int?@id @default(autoincrement())
-  IDRegistro    Int?  IDExperiencia Int?}
+  ID            Int @id @default(autoincrement())
+  IDRegistro    Int?  
+  IDExperiencia Int?
+  }
 
 model net_registroxarquivos {
-  ID                     Int?                   @id @default(autoincrement())
-  IDRegistro             Int?  Arquivo                String                 @db.VarChar(200)
-  Ordem                  Int?  net_registropedagogico net_registropedagogico @relation(fields: [IDRegistro], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_registroxarquivos_1")
+  ID                     Int                   @id @default(autoincrement())
+  IDRegistro             Int? 
+   Arquivo               String?                 @db.VarChar(200)
+  Ordem                  Int?  
+  net_registropedagogico net_registropedagogico? @relation(fields: [IDRegistro], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_registroxarquivos_1")
 
   @@index([IDRegistro], map: "FK_net_registroxarquivos_1")
 }
 
 model net_registroxarquivostemp {
-  ID      Int?    @id @default(autoincrement())
+  ID      Int    @id @default(autoincrement())
   Arquivo String? @db.VarChar(200)
   Sessao  String? @db.VarChar(45)
   Ordem   Int?
 }
 
 model net_reportarerro {
-  ID         Int?      @id @default(autoincrement())
-  IDPergunta Int?  IDPerfil   Int?  Nome       String    @db.VarChar(100)
-  IDEscola   Int?  IDEnsino   Int?  IDSerie    Int?  IDPeriodo  Int?  IDMateria  Int?  Data       DateTime? @default(now()) @db.Timestamp(0)
+  ID         Int      @id @default(autoincrement())
+  IDPergunta Int?  
+  IDPerfil   Int?  
+  Nome       String?    @db.VarChar(100)
+  IDEscola   Int?  
+  IDEnsino   Int?  
+  IDSerie    Int?  
+  IDPeriodo  Int?  
+  IDMateria  Int?  
+  Data       DateTime? @default(now()) @db.Timestamp(0)
   IP         String?   @db.VarChar(45)
   Erro       String?   @db.VarChar(2000)
   IDUsuario  Int?
@@ -2480,28 +2513,38 @@ model net_reportarerro {
 }
 
 model net_resolucoesxexercicios {
-  ID           Int?    @id @default(autoincrement())
-  IDColecao    Int?  IDSerie      Int?  IDFundamento Int?  IDMateria    Int?  Bimestre     Int?  Titulo       String? @db.VarChar(100)
+  ID           Int    @id @default(autoincrement())
+  IDColecao    Int?  
+  IDSerie      Int?  
+  IDFundamento Int?  
+  IDMateria    Int?  
+  Bimestre     Int?  
+  Titulo       String? @db.VarChar(100)
   Arquivo      String? @db.VarChar(180)
-  Ativo        Boolean @default(true)
+  Ativo        Boolean? @default(true)
 }
 
 model net_resolucoesxexercicioscolecoes {
-  ID      Int?    @id @default(autoincrement())
-  Colecao String  @db.VarChar(100)
-  Ativo   Boolean @default(true)
+  ID      Int    @id @default(autoincrement())
+  Colecao String?  @db.VarChar(100)
+  Ativo   Boolean? @default(true)
 }
 
 model net_resolucoesxexerciciosxmasters {
-  ID          Int?      @id @default(autoincrement())
-  IDResolucao Int?  IDMaster    Int?  Data        DateTime? @default(now()) @db.Timestamp(0)
+  ID          Int      @id @default(autoincrement())
+  IDResolucao Int?  
+  IDMaster    Int?  
+  Data        DateTime? @default(now()) @db.Timestamp(0)
 }
 
 model net_responsavelxaluno {
-  ID                                                                         Int?               @id @default(autoincrement())
-  IDResponsavel                                                              Int?  IDParentesco                                                               Int?  IDAluno                                                                    Int?  net_acessorestrito_net_acessorestritoTonet_responsavelxaluno_IDAluno       net_acessorestrito @relation("net_acessorestritoTonet_responsavelxaluno_IDAluno", fields: [IDAluno], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_responsavelxaluno_3")
-  net_parentesco                                                             net_parentesco     @relation(fields: [IDParentesco], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_responsavelxaluno_2")
-  net_acessorestrito_net_acessorestritoTonet_responsavelxaluno_IDResponsavel net_acessorestrito @relation("net_acessorestritoTonet_responsavelxaluno_IDResponsavel", fields: [IDResponsavel], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_responsavelxaluno_1")
+  ID                                                                         Int               @id @default(autoincrement())
+  IDResponsavel                                                              Int?  
+  IDParentesco                                                               Int?  
+  IDAluno                                                                    Int?  
+  net_acessorestrito_net_acessorestritoTonet_responsavelxaluno_IDAluno       net_acessorestrito? @relation("net_acessorestritoTonet_responsavelxaluno_IDAluno", fields: [IDAluno], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_responsavelxaluno_3")
+  net_parentesco                                                             net_parentesco?     @relation(fields: [IDParentesco], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_responsavelxaluno_2")
+  net_acessorestrito_net_acessorestritoTonet_responsavelxaluno_IDResponsavel net_acessorestrito? @relation("net_acessorestritoTonet_responsavelxaluno_IDResponsavel", fields: [IDResponsavel], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_responsavelxaluno_1")
 
   @@index([IDAluno], map: "FK_net_ResponsavelXAluno_1")
   @@index([IDResponsavel], map: "FK_net_ResponsavelXAluno_2")
@@ -2509,25 +2552,30 @@ model net_responsavelxaluno {
 }
 
 model net_responsavelxmaster {
-  ID                                                                              Int?               @id @default(autoincrement())
-  IDResponsavel                                                                   Int?  IDMasterPrincipal                                                               Int?  net_acessorestrito_net_acessorestritoTonet_responsavelxmaster_IDMasterPrincipal net_acessorestrito @relation("net_acessorestritoTonet_responsavelxmaster_IDMasterPrincipal", fields: [IDMasterPrincipal], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_responsavelxmaster_2")
-  net_acessorestrito_net_acessorestritoTonet_responsavelxmaster_IDResponsavel     net_acessorestrito @relation("net_acessorestritoTonet_responsavelxmaster_IDResponsavel", fields: [IDResponsavel], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_responsavelxmaster_1")
+  ID                                                                              Int               @id @default(autoincrement())
+  IDResponsavel                                                                   Int?  
+  IDMasterPrincipal                                                               Int?  
+  net_acessorestrito_net_acessorestritoTonet_responsavelxmaster_IDMasterPrincipal net_acessorestrito? @relation("net_acessorestritoTonet_responsavelxmaster_IDMasterPrincipal", fields: [IDMasterPrincipal], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_responsavelxmaster_2")
+  net_acessorestrito_net_acessorestritoTonet_responsavelxmaster_IDResponsavel     net_acessorestrito? @relation("net_acessorestritoTonet_responsavelxmaster_IDResponsavel", fields: [IDResponsavel], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_responsavelxmaster_1")
 
   @@index([IDResponsavel], map: "FK_net_ResponsavelXMaster_1")
   @@index([IDMasterPrincipal], map: "FK_net_ResponsavelXMaster_2")
 }
 
 model net_respostasxarquivos {
-  ID         Int?   @id @default(autoincrement())
-  IDResposta Int?  Arquivo    String @db.VarChar(200)
-  IDUsuario  Int?}
+  ID         Int   @id @default(autoincrement())
+  IDResposta Int?  
+  Arquivo    String? @db.VarChar(200)
+  IDUsuario  Int?
+  }
 
 model net_salas {
-  ID                   Int?                   @id @default(autoincrement())
-  IDEscola             Int?  PavilhaoAndar        String?                @db.VarChar(50)
-  Sala                 String                 @db.VarChar(100)
-  Ativo                Boolean                @default(true)
-  net_escola           net_escola             @relation(fields: [IDEscola], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_salas_1")
+  ID                   Int                   @id @default(autoincrement())
+  IDEscola             Int?  
+  PavilhaoAndar        String?                @db.VarChar(50)
+  Sala                 String?                 @db.VarChar(100)
+  Ativo                Boolean?                @default(true)
+  net_escola           net_escola?             @relation(fields: [IDEscola], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_salas_1")
   net_comunicadossalas net_comunicadossalas[]
   net_turmas           net_turmas[]
 
@@ -2535,23 +2583,25 @@ model net_salas {
 }
 
 model net_segmentoxgamificacao {
-  id              Int?            @id @default(autoincrement())
-  idTipoEnsino    Int?  idGamificacao   Int?  net_gamificacao net_gamificacao @relation(fields: [idGamificacao], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "idGamificacao_fk")
-  net_tipoensino  net_tipoensino  @relation(fields: [idTipoEnsino], references: [ID], onDelete: NoAction, onUpdate: NoAction, map: "idTipoEnsino_fk")
+  id              Int            @id @default(autoincrement())
+  idTipoEnsino    Int?  
+  idGamificacao   Int?  
+  net_gamificacao net_gamificacao? @relation(fields: [idGamificacao], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "idGamificacao_fk")
+  net_tipoensino  net_tipoensino?  @relation(fields: [idTipoEnsino], references: [ID], onDelete: NoAction, onUpdate: NoAction, map: "idTipoEnsino_fk")
 
   @@index([idGamificacao], map: "idGamificacao_idx")
   @@index([idTipoEnsino], map: "idTipoEnsino_fk_idx")
 }
 
 model net_sejaconveniado {
-  ID          Int?     @id @default(autoincrement())
-  Data        DateTime @default(now()) @db.Timestamp(0)
-  Nome        String   @db.VarChar(150)
-  Telefone    String   @db.VarChar(45)
-  Celular     String   @db.VarChar(45)
-  Email       String   @db.VarChar(100)
+  ID          Int     @id @default(autoincrement())
+  Data        DateTime? @default(now()) @db.Timestamp(0)
+  Nome        String?   @db.VarChar(150)
+  Telefone    String?   @db.VarChar(45)
+  Celular     String?   @db.VarChar(45)
+  Email       String?   @db.VarChar(100)
   Ip          String?  @db.VarChar(45)
-  Mensagem    String   @db.Text
+  Mensagem    String?   @db.Text
   Tipo        String?  @default("Seja-Conveniado") @db.VarChar(20)
   Perfil      String?  @db.VarChar(45)
   Cargo       String?  @db.VarChar(45)
@@ -2560,9 +2610,9 @@ model net_sejaconveniado {
 }
 
 model net_series {
-  ID                                  Int?                                  @id @default(autoincrement())
-  Serie                               String                                @db.VarChar(50)
-  Ativo                               Boolean                               @default(true)
+  ID                                  Int                                  @id @default(autoincrement())
+  Serie                               String?                                @db.VarChar(50)
+  Ativo                               Boolean?                               @default(true)
   net_descritoresxseries              net_descritoresxseries[]
   net_masterxmaterialdidaticopergunta net_masterxmaterialdidaticopergunta[]
   net_materialdidaticopergunta        net_materialdidaticopergunta[]
@@ -2571,62 +2621,62 @@ model net_series {
 }
 
 model net_situacaoaluno {
-  ID          Int?          @id @default(autoincrement())
-  Situacao    String        @db.VarChar(50)
-  Ativo       Boolean       @default(true)
+  ID          Int          @id @default(autoincrement())
+  Situacao    String?        @db.VarChar(50)
+  Ativo       Boolean?       @default(true)
   net_boletim net_boletim[]
 }
 
 model net_statusperiodoanual {
-  ID                    Int?                    @id @default(autoincrement())
-  Abreviacao            String                  @db.VarChar(5)
-  Status                String                  @db.VarChar(50)
+  ID                    Int                    @id @default(autoincrement())
+  Abreviacao            String?                  @db.VarChar(5)
+  Status                String?                  @db.VarChar(50)
   CorFundo              String?                 @db.VarChar(7)
-  Ativo                 Boolean                 @default(true)
+  Ativo                 Boolean?                 @default(true)
   CorTexto              String?                 @db.VarChar(7)
   net_calendarioescolar net_calendarioescolar[]
 }
 
 model net_subtipoconteudo {
-  ID           Int?           @id @default(autoincrement())
-  SubTipo      String         @db.VarChar(100)
-  Ativo        Boolean        @default(true)
+  ID           Int           @id @default(autoincrement())
+  SubTipo      String?         @db.VarChar(100)
+  Ativo        Boolean?        @default(true)
   Ordem        Int?           @default(0)
   net_conteudo net_conteudo[]
 }
 
 model net_textos {
-  ID_Texto Int?    @id @default(autoincrement())
-  Pagina   String  @db.VarChar(100)
+  ID_Texto Int    @id @default(autoincrement())
+  Pagina   String?  @db.VarChar(100)
   Foto     String? @db.VarChar(255)
   Text     String? @db.MediumText
 }
 
 model net_tipoafastamento {
-  ID    Int?    @id @default(autoincrement()) @db.UnsignedInt
-  Tipo  String  @db.VarChar(45)
-  Ativo Boolean @default(true)
+  ID    Int    @id @default(autoincrement()) @db.UnsignedInt
+  Tipo  String?  @db.VarChar(45)
+  Ativo Boolean? @default(true)
 }
 
 model net_tipoavaliacaodescritores {
-  ID              Int?              @id @default(autoincrement())
-  Tipo            String            @db.VarChar(50)
-  Ativo           Boolean           @default(true)
-  Sigla           String            @db.VarChar(4)
+  ID              Int              @id @default(autoincrement())
+  Tipo            String?            @db.VarChar(50)
+  Ativo           Boolean?           @default(true)
+  Sigla           String?            @db.VarChar(4)
   net_descritores net_descritores[]
 }
 
 model net_tipocaracteristica {
-  ID                  Int?                  @id @default(autoincrement())
-  Tipo                String                @db.VarChar(50)
-  Ativo               Boolean               @default(true)
+  ID                  Int                  @id @default(autoincrement())
+  Tipo                String?                @db.VarChar(50)
+  Ativo               Boolean?              @default(true)
   net_caracteristicas net_caracteristicas[]
 }
 
 model net_tipoensino {
-  ID                                 Int?                                 @id @default(autoincrement())
-  Tipo                               String                               @db.VarChar(100)
-  Ativo                              Boolean                              @default(true)
+  ID                                 Int                                 @id @default(autoincrement())
+  Tipo                               String?                               @db.VarChar(100)
+  Ativo                              Boolean?                              @default(true)
   net_alunohistorico                 net_alunohistorico[]
   net_configuracaocomercial          net_configuracaocomercial[]
   net_configuracaonotas              net_configuracaonotas[]
@@ -2641,15 +2691,22 @@ model net_tipoensino {
 }
 
 model net_tiposturma {
-  ID         Int?         @id @default(autoincrement())
-  Tipo       String       @db.VarChar(50)
-  Ativo      Boolean      @default(true)
+  ID         Int         @id @default(autoincrement())
+  Tipo       String?       @db.VarChar(50)
+  Ativo      Boolean?      @default(true)
   net_turmas net_turmas[]
 }
 
 model net_turmas {
-  ID                                 Int?                                 @id @default(autoincrement())
-  IDTipoEnsino                       Int?  IDSerie                            Int?  IDTipoTurma                        Int?  IDSala                             Int?  IDTurno                            Int?  Ano                                Int?  IDEscola                           Int?  IDCoordenador                      Int?
+  ID                                 Int                                 @id @default(autoincrement())
+  IDTipoEnsino                       Int?  
+  IDSerie                            Int?  
+  IDTipoTurma                        Int?  
+  IDSala                             Int?  
+  IDTurno                            Int?  
+  Ano                                Int?  
+  IDEscola                           Int?  
+  IDCoordenador                      Int?
   IDDiretor                          Int?
   IDProf_Resp                        Int?
   QTDAulas1                          Int?                                 @default(0)
@@ -2657,12 +2714,12 @@ model net_turmas {
   QTDAulas3                          Int?                                 @default(0)
   QTDAulas4                          Int?                                 @default(0)
   Sessao                             String?                              @db.VarChar(30)
-  net_escola                         net_escola                           @relation(fields: [IDEscola], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_turmas_6")
-  net_salas                          net_salas                            @relation(fields: [IDSala], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_turmas_4")
-  net_series                         net_series                           @relation(fields: [IDSerie], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_turmas_2")
-  net_tipoensino                     net_tipoensino                       @relation(fields: [IDTipoEnsino], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_turmas_1")
-  net_tiposturma                     net_tiposturma                       @relation(fields: [IDTipoTurma], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_turmas_3")
-  net_turnos                         net_turnos                           @relation(fields: [IDTurno], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_turmas_5")
+  net_escola                         net_escola?                           @relation(fields: [IDEscola], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_turmas_6")
+  net_salas                          net_salas?                            @relation(fields: [IDSala], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_turmas_4")
+  net_series                         net_series?                           @relation(fields: [IDSerie], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_turmas_2")
+  net_tipoensino                     net_tipoensino?                       @relation(fields: [IDTipoEnsino], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_turmas_1")
+  net_tiposturma                     net_tiposturma?                       @relation(fields: [IDTipoTurma], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_turmas_3")
+  net_turnos                         net_turnos?                           @relation(fields: [IDTurno], references: [ID], onDelete: Cascade, onUpdate: NoAction, map: "FK_net_turmas_5")
   net_alunoxturma                    net_alunoxturma[]
   net_calendarioescolar              net_calendarioescolar[]
   net_comunicadosturma               net_comunicadosturma[]
@@ -2683,16 +2740,16 @@ model net_turmas {
 }
 
 model net_turnos {
-  ID                   Int?                   @id @default(autoincrement())
-  Turno                String                 @db.VarChar(50)
-  Ativo                Boolean                @default(true)
+  ID                   Int                   @id @default(autoincrement())
+  Turno                String?                 @db.VarChar(50)
+  Ativo                Boolean?                @default(true)
   net_comunicadosturno net_comunicadosturno[]
   net_turmas           net_turmas[]
 }
 
 model net_unidadetematica {
-  id                                 Int?                                 @id @default(autoincrement())
-  unidadeTematica                    String                               @db.VarChar(100)
+  id                                 Int                                 @id @default(autoincrement())
+  unidadeTematica                    String?                               @db.VarChar(100)
   net_materialdidaticopergunta       net_materialdidaticopergunta[]
   net_materialdidaticoperguntateste2 net_materialdidaticoperguntateste2[]
 }
