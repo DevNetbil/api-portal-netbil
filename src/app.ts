@@ -11,22 +11,23 @@ export const app = express();
 
 app.use(express.json());
 
-app.get(`/:what`, async (_req, res) => {
-  const data = moment().locale("pt-br").tz("America/Sao_Paulo").format("L");
-  const time = moment().locale("pt-br").tz("America/Sao_Paulo").format("LT");
-  const resultLogged = await logged(_req.headers);
-  console.log("LOGADO ->", resultLogged);
-  res.json([data, time]);
-});
+// app.get(`/:what`, async (_req, res) => {
+//   const data = moment().locale("pt-br").tz("America/Sao_Paulo").format("L");
+//   const time = moment().locale("pt-br").tz("America/Sao_Paulo").format("LT");
+//   const resultLogged = await logged(_req.headers);
+//   console.log("LOGADO ->", resultLogged);
+//   console.log('headers',_req.headers);
+//   res.json([data, time, resultLogged]);
+// });
 
-app.get(`/:what/:second`, async (_req, res) => {
-  res.redirect(200, `/${_req.params.what}/${_req.params.second}`);
-  const data = moment().locale("pt-br").tz("America/Sao_Paulo").format("L");
-  const time = moment().locale("pt-br").tz("America/Sao_Paulo").format("LT");
-  const resultLogged = await logged(_req.headers);
-  console.log("LOGADO ->", resultLogged);
-  res.json([data, time, "second"]);
-});
+// app.get(`/:what/:second`, async (_req, res) => {
+//   res.redirect(200, `/${_req.params.what}/${_req.params.second}`);
+//   const data = moment().locale("pt-br").tz("America/Sao_Paulo").format("L");
+//   const time = moment().locale("pt-br").tz("America/Sao_Paulo").format("LT");
+//   const resultLogged = await logged(_req.headers);
+//   console.log("LOGADO ->", resultLogged);
+//   res.json([data, time, "second"]);
+// });
 
 app.use("/agendas", erAgendas);
 app.use("/registro", rtRegistro);
