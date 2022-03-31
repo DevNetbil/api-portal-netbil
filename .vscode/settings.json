@@ -3,6 +3,8 @@
         "acessorestrito",
         "escolaxusuario",
         "logado",
+        "Notificacao",
+        "pushtoken",
         "registropedagogico",
         "registros",
         "Usuario"
