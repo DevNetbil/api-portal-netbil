@@ -37,7 +37,41 @@ const NotificationService = async (
   });
 };
 
-erNotificacao.get(`/app/agendas/chat`, async (req, res) => {
+// ------------------------------------------------------->
+
+erNotificacao.get(`/aulas`, async (req, res) => {
+
+  const { ownerID, professores, alunos, gestores } = req.body;
+  const ids:number[] = [];
+  professores.forEach((element: any) => {
+    ids.push(Number(element));
+  });
+  alunos.forEach((element: any) => {
+    ids.push(Number(element));
+  });
+  gestores.forEach((element: any) => {
+    ids.push(Number(element));
+  });
+
+  const message: ExpoPushMessage = {
+    to: 'token',
+    body: '',
+    data: { urlAction: `https://netbil.com.br/portal` }
+  };
+
+  
+  await NotificationService(ids,message);
+
+  res.json(["teste/AGENDAS"]);
+});
+
+erNotificacao.get(`/agendas/create`, async (req, res) => {
+  console.log("criou um agenda notifca!");
+  res.json(["teste/AGENDAS"]);
+});
+
+erNotificacao.get(`/`, async (req, res) => {
+  console.log("teste");
   res.json(["teste/AGENDAS"]);
 });
 

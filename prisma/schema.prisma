@@ -1567,7 +1567,7 @@ model net_habilidade {
   @@index([idCampoExperiencia], map: "idCampoExperiencia_habilidade_idx")
 }
 
-model net_habilidadesef {
+model net_habilidadesEF {
   id                           Int                           @id @default(autoincrement())
   codigo                       String                        @db.VarChar(45)
   habilidade                   String                        @db.VarChar(4000)
@@ -1805,7 +1805,7 @@ model net_materialdidaticomaterias {
   Sigla                               String                                @db.VarChar(4)
   net_competenciaespecifica           net_competenciaespecifica[]
   net_descritoresxseries              net_descritoresxseries[]
-  net_habilidadesef                   net_habilidadesef[]
+  net_habilidadesEF                   net_habilidadesEF[]
   net_masterxmaterialdidaticopergunta net_masterxmaterialdidaticopergunta[]
   net_materialdidaticopergunta        net_materialdidaticopergunta[]
   net_materialdidaticoperguntateste2  net_materialdidaticoperguntateste2[]
@@ -2752,12 +2752,4 @@ model net_unidadetematica {
   unidadeTematica                    String                               @db.VarChar(100)
   net_materialdidaticopergunta       net_materialdidaticopergunta[]
   net_materialdidaticoperguntateste2 net_materialdidaticoperguntateste2[]
-}
-
-model prisma_teste {
-  ID    Int      @id @default(autoincrement())
-  Nome  String?  @db.VarChar(100)
-  Email String   @db.VarChar(100)
-  Data  DateTime @default(now()) @db.Timestamp(0)
-  IP    String?  @db.VarChar(45)
 }
