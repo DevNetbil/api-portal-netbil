@@ -1,6 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import express from "express";
 import Expo, { ExpoPushMessage } from "expo-server-sdk";
+import { notificationService } from "../functions/notificationService";
 
 const erNotificacao = express.Router();
 const prisma = new PrismaClient();
@@ -8,41 +9,15 @@ const prisma = new PrismaClient();
 // er - ExpressRouter.
 // Procurar
 
-const NotificationService = async (
-  idUsers: number[],
-  message: ExpoPushMessage
-) => {
-  //-->
-  // Tokens
-  const userTokens = await prisma.net_app_pushtoken.findMany({
-    where: { idUser: { in: idUsers } },
-  });
-  if (userTokens.length === 0) {
-    return;
-  }
-  const expo = new Expo();
-  userTokens.forEach((element) => {
-    message.to = String(element.token);
-    if (!Expo.isExpoPushToken(element.token)) {
-      return;
-    }
-    let chunks = expo.chunkPushNotifications([message]);
-    chunks.forEach(async (chunk) => {
-      try {
-        await expo.sendPushNotificationsAsync(chunk);
-      } catch (error) {
-        return;
-      }
-    });
-  });
-};
+
 
 // ------------------------------------------------------->
 
 erNotificacao.get(`/aulas`, async (req, res) => {
 
   const { ownerID, professores, alunos, gestores } = req.body;
-  const ids:number[] = [];
+  const ids:number[] = [];  
+
   professores.forEach((element: any) => {
     ids.push(Number(element));
   });
@@ -53,22 +28,17 @@ erNotificacao.get(`/aulas`, async (req, res) => {
     ids.push(Number(element));
   });
 
-  const message: ExpoPushMessage = {
-    to: 'token',
-    body: '',
-    data: { urlAction: `https://netbil.com.br/portal` }
-  };
+ 
 
   
-  await NotificationService(ids,message);
+  await notificationService(ids,message);
 
   res.json(["teste/AGENDAS"]);
 });
 
 erNotificacao.get(`/agendas/create`, async (req, res) => {
  
-  
-  
+  res.json(["teste/AGENDAS"]);
 });
 
 erNotificacao.get(`/`, async (req, res) => {
