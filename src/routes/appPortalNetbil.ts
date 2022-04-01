@@ -66,8 +66,9 @@ erNotificacao.get(`/aulas`, async (req, res) => {
 });
 
 erNotificacao.get(`/agendas/create`, async (req, res) => {
-  console.log("criou um agenda notifca!");
-  res.json(["teste/AGENDAS"]);
+ 
+  
+  
 });
 
 erNotificacao.get(`/`, async (req, res) => {
