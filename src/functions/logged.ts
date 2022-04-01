@@ -1,8 +1,8 @@
-import { PrismaClient } from "@prisma/client";
-import { IncomingHttpHeaders } from "http";
+import { PrismaClient } from '@prisma/client';
+import { IncomingHttpHeaders } from 'http';
 
 type Props = {
-  "Content-Type": "application/json";
+  'Content-Type': 'application/json';
   profileid: string;
   masterid: string;
   schoolid: string;
@@ -24,9 +24,9 @@ const logged = async (headers: Props | IncomingHttpHeaders) => {
     if (result.length > 0) {
       return result;
     }
-    throw new Error("Usuário não logado");
+    throw new Error('Usuário não logado');
   } catch (error) {
-    throw new Error("Usuário não logado");
+    throw new Error('Usuário não logado');
   }
 };
 
