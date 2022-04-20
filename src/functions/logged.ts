@@ -1,28 +1,30 @@
 import { PrismaClient } from '@prisma/client';
 import { IncomingHttpHeaders } from 'http';
 
-type Props = {
+type getHeadersProps = {
   'Content-Type': 'application/json';
-  profileid: string;
-  masterid: string;
-  schoolid: string;
-  userid: string;
+  idprofile: string;
+  idmaster: string;
+  idschool: string;
+  iduser: string;
   section: string;
 };
 
 export const prisma = new PrismaClient();
 
-const logged = async (headers: Props | IncomingHttpHeaders) => {
-  const { profileid, userid } = headers;
+const logged = async (headers: IncomingHttpHeaders) => {
+  const {
+    idprofile, idmaster, idschool, iduser, idUser,
+  } = headers;
   try {
     const result = await prisma.net_acessorestrito.findMany({
       where: {
-        ID: Number(userid),
-        // IDPerfil: Number(profileid),
+        ID: Number(iduser) || Number(idUser),
       },
     });
+
     if (result.length > 0) {
-      return result;
+      return result[0];
     }
     throw new Error('Usuário não logado');
   } catch (error) {

@@ -4,10 +4,13 @@ import helmet from 'helmet';
 import cors from 'cors';
 import erAgendas from './routes/agenda';
 import erError from './routes/error';
-import rtRegistro from './routes/registro';
+import rtRegistros from './routes/registros';
 import erAppPortalNetbil from './routes/appPortalNetbil';
+import logged from './functions/logged';
+import rtFilter from './routes/filter';
+import erLogin from './routes/login';
+import erBDQuestoes from './routes/bancoQuestoes';
 
-export const prisma = new PrismaClient();
 export const app = express();
 
 app.use(helmet());
@@ -43,8 +46,11 @@ app.use((req, res, next) => {
 // });
 
 app.use('/agendas', erAgendas);
-app.use('/registro', rtRegistro);
+app.use('/login', erLogin);
+app.use('/registros', rtRegistros);
 app.use('/error', erError);
+app.use('/filter', rtFilter);
 app.use('/app/portalnetbil', erAppPortalNetbil);
+app.use('/banco-de-questoes', erBDQuestoes);
 
 export default app;

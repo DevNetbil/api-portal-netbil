@@ -22,7 +22,10 @@
         "camelcase": "off",
         "import/extensions": "off",
         "prefer-const":"off",
-        "no-case-declarations":"off"     
+        "no-case-declarations":"off",
+        "consistent-return":"off"
+        
+         
                    
     }
 }

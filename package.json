@@ -2,31 +2,31 @@
   "name": "rest-express",
   "version": "1.0.0",
   "license": "MIT",
+  "main": "src/server.js",
   "scripts": {
-    "set:local": "yarn && cross-env PORT=3007 && cross-env DATABASE_URL='mysql://root:samurainetbil@localhost:3307/netbilcontrole'",
-    "set:prod": "yarn && set PORT=8555 && set DATABASE_URL='mysql://netbilportal:%2F3Lucia4%23@10.24.10.3:3306/netbilportal'",
-    "PM2-dev": "pm2 start ./config/pm2/pm2-dev-process.config.js",
-    "tt": "tsc index.ts -w & pm2 start dist/app.js --watch",
-    "start:dev3": "nodemon src/index.ts localhost 3333",
-    "start:dev": "pm2 start ./config/pm2/pm2-dev-process.config.js --watch",
-    "start:prod": "pm2 start ./config/pm2/pm2-prod-process.config.js",
-    "go:dev": "yarn portLocal && yarn dataBaseLocal && prisma &&yarn psm-gen-dev&&yarn nodemon src/server.ts",
-    "go:nodemon": "nodemon src/server.ts",
-    "go:prisma": "yarn set:local && yarn prisma db pull --force",
-    "go:teste": "yarn set:local && yarn prisma migrate deploy",
-    "tet1": "prisma db pull --force && prisma generate && nodemon src/server.ts",
-    "pm2:go":"pm2 start ./config/pm2/pm2-prod-process.config.js"
+    "build":"tsc",
+    "pm2Down": "pm2 delete api-netbil-rest",
+    "pm2Up": "pm2 start ./dist/src/server.js",
+    "pm2Eco": "pm2 start ecosystem.config.js",
+    "genPrisma": "prisma db pull --force && prisma generate",
+    "dev": "prisma db pull --force && prisma generate && nodemon src/server.ts",
+    "start:prod": "yarn tsc && pm2 start ecosystem.config.js",
+    "build:go": "yarn genPrisma && yarn build && yarn pm2Down && yarn pm2Eco",
+    "fast": "yarn build && yarn pm2Down && yarn pm2Eco",
+    "t": "yarn pm2Down && yarn pm2Eco",
+    "y": "pm2-dev start ./dist/src/server.js"
   },
   "dependencies": {
     "@types/cors": "^2.8.12",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
     "express": "4.17.3",
     "helmet": "^5.0.2",
     "moment-timezone": "^0.5.34",
-    "pm2": "^5.2.0"
+    "pm2": "5.2.0"
   },
   "devDependencies": {
-    "@prisma/client": "^3.11.1",
+    "@prisma/client": "^3.12.0",
     "@types/express": "4.17.13",
     "@types/node": "16.11.26",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
@@ -41,11 +41,9 @@
     "moment": "^2.29.1",
     "nodemon": "^2.0.15",
     "prettier": "^2.6.1",
-    "prisma": "^3.11.1",
-    "ts-node": "10.7.0",
-    "typescript": "4.6.2"
-  },
-  "prisma": {
-    "seed": "ts-node prisma/seed.ts"
+    "prisma": "^3.12.0",
+    "ts-node": "^10.7.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.3"
   }
 }

@@ -5,5 +5,11 @@
     "strict": true,
     "lib": ["esnext"],
     "esModuleInterop": true
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "./node_modules",
+    "./node_modules/*",
+    "./node_modules/@types/node/index.d.ts",
+  ]
 }
